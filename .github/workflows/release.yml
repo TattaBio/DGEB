@@ -1,0 +1,51 @@
+# This workflow will
+# - Find the latest version tag based on the commit history
+#   - Create a git tag for the new version
+#   - Update the version number in pyproject.toml based on the commit history
+# - Upload the package to PyPI
+# - Create a release on GitHub
+
+# This workflow required the following secrets to be set:
+# - a GitHub personal access token with the `repo` scope called `RELEASE`
+# - and that you setup trusted publishing using PyPI as described here: https://blog.pypi.org/posts/2023-04-20-introducing-trusted-publishers/
+
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing using PyPI
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python Semantic Release
+        id: release
+        uses: python-semantic-release/python-semantic-release@v9.8.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.9.0
+        if: steps.release.outputs.released == 'true'
+        with:
+          repository-url: https://test.pypi.org/legacy/
+        # This action supports PyPI's trusted publishing implementation, which allows authentication to PyPI without a manually
+        # configured API token or username/password combination. To perform trusted publishing with this action, your project's
+        # publisher must already be configured on PyPI.
+
+      - name: Publish package distributions to GitHub Releases
+        uses: python-semantic-release/upload-to-gh-release@v9.8.3
+        if: steps.release.outputs.released == 'true'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.release.outputs.tag }}
