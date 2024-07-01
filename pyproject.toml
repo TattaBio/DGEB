@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dgeb"
-version = "0.0.1"
+version = "0.0.2"
 description = "Diverse Genomic Embedding Benchmark"
 readme = "README.md"
 license = { file = "LICENSE" }
