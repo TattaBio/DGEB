@@ -1,4 +1,4 @@
-name: CI for GEB
+name: CI for DGEB
 
 on:
   push:

@@ -39,7 +39,7 @@ pip install dgeb
 
 ## Usage
 
-- Using the python script (see [run_dgeb.py](https://github.com/tattabio/geb/blob/main/run_geb.py)):
+- Using the python script (see [run_dgeb.py](https://github.com/tattabio/dgeb/blob/main/run_dgeb.py)):
 
 ```bash
 python run_dgeb.py --model facebook/esm2_t6_8M_UR50D
@@ -51,14 +51,14 @@ python run_dgeb.py --model facebook/esm2_t6_8M_UR50D
 import dgeb
 
 model = dgeb.get_model("facebook/esm2_t6_8M_UR50D")
-tasks = dgeb.get_tasks_by_modality(geb.Modality.PROTEIN)
+tasks = dgeb.get_tasks_by_modality(dgeb.Modality.PROTEIN)
 evaluation = dgeb.DGEB(tasks=tasks)
 evaluation.run(model, output_folder="results")
 ```
 
 ### Using a custom model
 
-Custom models should be wrapped with the `dgeb.models.BioSeqTransformer` abstract class, and specify the modality, number of layers, and embedding dimension. See see [models.py](https://github.com/tattabio/geb/blob/main/geb/models.py) for additional examples on custom model loading and inference.
+Custom models should be wrapped with the `dgeb.models.BioSeqTransformer` abstract class, and specify the modality, number of layers, and embedding dimension. See see [models.py](https://github.com/tattabio/dgeb/blob/main/dgeb/models.py) for additional examples on custom model loading and inference.
 
 ```python
 import dgeb

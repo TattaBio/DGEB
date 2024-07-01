@@ -1,7 +1,7 @@
-from itertools import chain
 import logging
 import os
 import traceback
+from itertools import chain
 from typing import Any, List
 
 from rich.console import Console
@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class GEB:
+class DGEB:
     """GEB class to run the evaluation pipeline."""
 
     def __init__(self, tasks: List[type[Task]], seed: int = 42):

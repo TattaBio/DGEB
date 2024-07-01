@@ -1,19 +1,20 @@
 """
-Main command to run genomic embedding benchmarks (GEB) on a model.
-example command to run GEB:
-python run_geb.py -m facebook/esm2_t6_8M_UR50D
+Main command to run diverse genomic embedding benchmarks (DGEB) on a model.
+example command to run DGEB:
+python run_dgeb.py -m facebook/esm2_t6_8M_UR50D
 """
 
 import argparse
 import logging
 import os
-import geb
+
+import dgeb
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-ALL_TASK_NAMES = geb.get_all_task_names()
-ALL_MODEL_NAMES = geb.get_all_model_names()
+ALL_TASK_NAMES = dgeb.get_all_task_names()
+ALL_MODEL_NAMES = dgeb.get_all_model_names()
 
 
 def main():
@@ -110,7 +111,7 @@ def main():
         logger.info(f"Results will be saved to {output_folder}")
 
     # Load the model by name.
-    model = geb.get_model(
+    model = dgeb.get_model(
         model_name=args.model,
         layers=layers,
         devices=devices,
@@ -119,15 +120,15 @@ def main():
         pool_type=args.pool_type,
     )
 
-    all_tasks_for_modality = geb.get_tasks_by_modality(model.modality)
+    all_tasks_for_modality = dgeb.get_tasks_by_modality(model.modality)
 
     if args.tasks:
-        task_list = geb.get_tasks_by_name(args.tasks)
+        task_list = dgeb.get_tasks_by_name(args.tasks)
         if not all([task.metadata.modality == model.modality for task in task_list]):
             raise ValueError(f"Tasks must be one of {all_tasks_for_modality}")
     else:
         task_list = all_tasks_for_modality
-    evaluation = geb.GEB(tasks=task_list)
+    evaluation = dgeb.DGEB(tasks=task_list)
     _ = evaluation.run(model)
 
 
