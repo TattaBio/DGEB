@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.0.5 (2024-07-01)
+
+### Fix
+
+* fix: try fixing release to handle protected branch ([`5cedad3`](https://github.com/TattaBio/dgeb/commit/5cedad3e9f34d249eda9257e3c21fc8443d000cf))
+
+* fix: another change... ([`c5ad3f0`](https://github.com/TattaBio/dgeb/commit/c5ad3f098d36e25afdf4fa9aae20967eb968568e))
+
+* fix: update pip install command in readme ([`ff90791`](https://github.com/TattaBio/dgeb/commit/ff90791398f9a9b907c308400f88811a8f8633dc))
+
 ## v0.0.4 (2024-07-01)
 
 ### Fix
