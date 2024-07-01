@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.0.3 (2024-07-01)
+
+### Fix
+
+* fix: remove persist credentials ([`2ae683e`](https://github.com/TattaBio/dgeb/commit/2ae683ed7a68b0559b81b1b7f5716636beef1415))
+
+* fix: try to fix release CI ([`1dfc938`](https://github.com/TattaBio/dgeb/commit/1dfc9383b2dab8bba444b09c6b85500dadee7203))
+
 ## v0.0.2 (2024-07-01)
 
 ### Fix
