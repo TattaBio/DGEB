@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.0.6 (2024-07-01)
+
+### Fix
+
+* fix: nevermind that broke it ([`ec33a1c`](https://github.com/TattaBio/dgeb/commit/ec33a1c6539ac1fb2710869a2d436483a02236e0))
+
+* fix: see if I can remove this line ([`246d4e9`](https://github.com/TattaBio/dgeb/commit/246d4e9841a83d18217506d46f211f1341c63526))
+
 ## v0.0.5 (2024-07-01)
 
 ### Fix
