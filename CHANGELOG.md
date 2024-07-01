@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.0.4 (2024-07-01)
+
+### Fix
+
+* fix: move gh token to env ([`95e292c`](https://github.com/TattaBio/dgeb/commit/95e292c46f7908659d46bc093ef4903609f1edc5))
+
 ## v0.0.3 (2024-07-01)
 
 ### Fix
