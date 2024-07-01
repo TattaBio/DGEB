@@ -36,9 +36,9 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/TattaBio/DGEB"
+homepage = "https://github.com/TattaBio/dgeb"
 "Huggingface Organization" = "https://huggingface.co/tattabio"
-"Source Code" = "https://github.com/TattaBio/DGEB"
+"Source Code" = "https://github.com/TattaBio/dgeb"
 
 [project.optional-dependencies]
 dev = ["ruff>=0.0.254", "pytest", "pytest-xdist"]
