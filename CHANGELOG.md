@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.0.7 (2024-07-01)
+
+### Fix
+
+* fix: try again ([`e7d0ecd`](https://github.com/TattaBio/dgeb/commit/e7d0ecdcb63e909f9ab727f11fb3fd57414d2fa5))
+
+* fix: edit readme to see if job still works with restricted permissions ([`93cd728`](https://github.com/TattaBio/dgeb/commit/93cd728c8a632b9bed611c55dace2e2ffb103410))
+
+### Unknown
+
+* Merge pull request #1 from TattaBio/edit-readme
+
+fix: edit readme to see if job still works with restricted permissions ([`c45599c`](https://github.com/TattaBio/dgeb/commit/c45599cf9628155603245f906c09cf6483cffce8))
+
 ## v0.0.6 (2024-07-01)
 
 ### Fix
