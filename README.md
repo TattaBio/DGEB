@@ -31,7 +31,7 @@
 
 ## Installation
 
-Currently, DGEB sits on the Test PyPI index:
+Currently, DGEB sits on the Test PyPI index. Here's the command to install:
 
 ```bash
 pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ dgeb
