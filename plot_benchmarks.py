@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-from geb.geb import get_all_tasks, get_output_folder, get_tasks_by_name
-from geb.tasks.tasks import TaskResult
+from dgeb.geb import get_all_tasks, get_output_folder, get_tasks_by_name
+from dgeb.tasks.tasks import TaskResult
 
 ALL_TASKS = [task.metadata.id for task in get_all_tasks()]
 
