@@ -100,7 +100,7 @@ class MyModel(BioSeqTransformer):
 
 model = MyModel(model_name='path_to/huggingface_model')
 tasks = dgeb.get_tasks_by_modality(model.modality)
-evaluation = MTEB(tasks=tasks)
+evaluation = dgeb.DGEB(tasks=tasks)
 evaluation.run(model)
 ```
 
