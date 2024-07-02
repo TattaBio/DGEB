@@ -9,10 +9,10 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 
-from geb.evaluators import EDSEvaluator
-from geb.modality import Modality
-from geb.models import BioSeqTransformer
-from geb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
+from dgeb.evaluators import EDSEvaluator
+from dgeb.modality import Modality
+from dgeb.models import BioSeqTransformer
+from dgeb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
 
 logger = logging.getLogger(__name__)
 

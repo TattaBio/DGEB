@@ -9,14 +9,14 @@ from collections import defaultdict
 import datasets
 import numpy as np
 
-from geb.eval_utils import merge_split_elem_embeds
-from geb.evaluators import (
+from dgeb.eval_utils import merge_split_elem_embeds
+from dgeb.evaluators import (
     MultiClassMultiOutputKNNClassificationEvaluator,
     logRegClassificationEvaluator,
 )
-from geb.modality import Modality
-from geb.models import BioSeqTransformer
-from geb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
+from dgeb.modality import Modality
+from dgeb.models import BioSeqTransformer
+from dgeb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
 
 logger = logging.getLogger(__name__)
 
