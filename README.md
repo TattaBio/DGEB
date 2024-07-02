@@ -28,6 +28,18 @@
     <a href="https://huggingface.co/spaces/dgeb"><img style="float: middle; padding: 10px 10px 10px 10px;" width="100" height="100" src="./docs/images/tatta_logo.png" /></a>
 </h3>
 
+
+DGEB is a benchmark for evaluating biological sequence models on functional and evolutionary information. 
+
+DGEB is designed to evaluate model embeddings using:
+ - Diverse sequences accross the tree of life.
+ - Diverse tasks that capture different aspects of biological function.
+ - Both amino acid and nucleotide sequences.
+
+The current version of DGEB consists of 19 datasets covering all three domains of life (Bacteria, Archaea and Eukarya). DGEB evaluates embeddings using six different embedding tasks: Classification, BiGene mining, Evolutionary Distance Similarity (EDS), Pair Classification, Clustering, and Retrieval. 
+
+We welcome contributions of new tasks and datasets. 
+
 ## Installation
 
 Currently, DGEB sits on the Test PyPI index. Here's the command to install:
