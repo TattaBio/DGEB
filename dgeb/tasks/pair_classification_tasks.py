@@ -9,7 +9,7 @@ from collections import defaultdict
 from dgeb.evaluators import PairClassificationEvaluator
 from dgeb.modality import Modality
 from dgeb.models import BioSeqTransformer
-from dgeb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
+from dgeb.tasks import Dataset, Task, TaskMetadata, TaskResult
 
 from ..eval_utils import paired_dataset
 
