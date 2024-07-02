@@ -6,10 +6,10 @@ Cosine similarity is used to mine genes of related functions from different orga
 import logging
 from collections import defaultdict
 
-from geb.evaluators import BiGeneMiningEvaluator
-from geb.modality import Modality
-from geb.models import BioSeqTransformer
-from geb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
+from dgeb.evaluators import BiGeneMiningEvaluator
+from dgeb.modality import Modality
+from dgeb.models import BioSeqTransformer
+from dgeb.tasks.tasks import Dataset, Task, TaskMetadata, TaskResult
 
 logger = logging.getLogger(__name__)
 
