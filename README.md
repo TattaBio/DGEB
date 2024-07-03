@@ -36,7 +36,7 @@ DGEB is designed to evaluate model embeddings using:
  - Diverse tasks that capture different aspects of biological function.
  - Both amino acid and nucleotide sequences.
 
-The current version of DGEB consists of 19 datasets covering all three domains of life (Bacteria, Archaea and Eukarya). DGEB evaluates embeddings using six different embedding tasks: Classification, BiGene mining, Evolutionary Distance Similarity (EDS), Pair Classification, Clustering, and Retrieval. 
+The current version of DGEB consists of 18 datasets covering all three domains of life (Bacteria, Archaea and Eukarya). DGEB evaluates embeddings using six different embedding tasks: Classification, BiGene mining, Evolutionary Distance Similarity (EDS), Pair Classification, Clustering, and Retrieval. 
 
 We welcome contributions of new tasks and datasets. 
 
