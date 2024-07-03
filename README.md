@@ -1,3 +1,13 @@
+---
+title: DGEB
+app_file : leaderboard/app.py
+emoji: 🐨
+colorFrom: blue
+colorTo: blue
+sdk: docker
+sdk_version: 4.36.1
+pinned: false
+---
 <h1 align="center">Diverse Genomic Embedding Benchmark</h1>
 
 <p align="center">
