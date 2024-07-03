@@ -65,7 +65,7 @@ with gr.Blocks() as demo:
             pass
         else:
             filtered_df = df[df["Model"].str.contains(model_search, case=False)]
-        return hide_columns(filtered_df)
+        return filtered_df
 
     gr.Markdown(
         """
@@ -96,9 +96,7 @@ with gr.Blocks() as demo:
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(
-                        axis=1, how="all"
-                    )  # drop all NaN columns for Overall tab
+                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
 
                     data_frame = gr.DataFrame(filtered_df)
                     model_search.change(

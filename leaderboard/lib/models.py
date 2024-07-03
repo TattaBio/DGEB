@@ -1,11 +1,8 @@
-from pydantic import BaseModel
 import random
 from typing import List, Literal, Union
 from .utils import rand_string
 
 from pydantic import BaseModel
-from typing import List
-import random
 
 
 class Metric(BaseModel):
