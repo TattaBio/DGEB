@@ -1,6 +1,4 @@
-"""Task functions for evaluation.
-# TODO: Add dataset revisions.
-"""
+"""Task abstract class for evaluation and results."""
 
 import logging
 from abc import ABC, abstractmethod

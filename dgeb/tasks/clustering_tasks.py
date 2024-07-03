@@ -40,7 +40,7 @@ class RNAclustering(Task):
         datasets=[
             Dataset(
                 path="tattabio/e_coli_rnas",
-                revision="main",
+                revision="4c134bb4bdb2b0ef1d59fe10797efdfeaf318de6",
             )
         ],
         primary_metric_id="v_measure",
@@ -60,7 +60,7 @@ class MopBClustering(Task):
         datasets=[
             Dataset(
                 path="tattabio/mopb_clustering",
-                revision="main",
+                revision="eed4bfff9c5bd2dc2500c50757bfcb90425d999a",
             )
         ],
         primary_metric_id="v_measure",

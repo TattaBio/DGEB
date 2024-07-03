@@ -46,7 +46,7 @@ class EcoliOperon(Task):
         datasets=[
             Dataset(
                 path="tattabio/ecoli_operonic_pair",
-                revision="main",
+                revision="a62c01143a842696fc8200b91c1acb825e8cb891",
             )
         ],
         primary_metric_id="top_ap",
@@ -66,7 +66,7 @@ class CyanoOperonPair(Task):
         datasets=[
             Dataset(
                 path="tattabio/cyano_operonic_pair",
-                revision="main",
+                revision="eeb4cb71ec2a4ff688af9de7c0662123577d32ec",
             )
         ],
         primary_metric_id="top_ap",
@@ -86,7 +86,7 @@ class VibrioOperonPair(Task):
         datasets=[
             Dataset(
                 path="tattabio/vibrio_operonic_pair",
-                revision="main",
+                revision="24781b12b45bf81a079a6164ef0d2124948c1878",
             )
         ],
         primary_metric_id="top_ap",
