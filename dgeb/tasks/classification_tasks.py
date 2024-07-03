@@ -85,7 +85,7 @@ class EnzymeCommissionClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/ec_classification",
-                revision="main",
+                revision="d83aba56d785df48bd3b4acafc536ff8c03e7d98",
             )
         ],
         primary_metric_id="f1",
@@ -105,7 +105,7 @@ class EnzymeCommissionDNAClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/ec_classification_dna",
-                revision="main",
+                revision="e78328541bb16e7cda16830d9844c09cbf4e682d",
             )
         ],
         primary_metric_id="f1",
@@ -125,7 +125,7 @@ class ConvergentEnzymesClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/convergent_enzymes",
-                revision="main",
+                revision="37f75609f54de2bc0911ccb72faf1c2f5a4285aa",
             )
         ],
         primary_metric_id="f1",
@@ -180,7 +180,12 @@ class MIBiGProteinClassification(Task):
         description="Biosynthetic Gene cluster classification using protein sequences on MIBIG dataset.",
         type="classification",
         modality=Modality.PROTEIN,
-        datasets=[Dataset(path="tattabio/mibig_classification_prot", revision="main")],
+        datasets=[
+            Dataset(
+                path="tattabio/mibig_classification_prot",
+                revision="915a7ff28dc9820e35c4d7fd03d4c8c44a88ff1f",
+            )
+        ],
         primary_metric_id="f1",
     )
 
@@ -198,7 +203,7 @@ class MIBiGDNAClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/mibig_classification_dna",
-                revision="main",
+                revision="b5ca7a76d469e4e66c46f1b655903972571e6b61",
             )
         ],
         primary_metric_id="f1",

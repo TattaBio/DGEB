@@ -43,7 +43,7 @@ class BacArchBiGeneMining(Task):
         datasets=[
             Dataset(
                 path="tattabio/bac_arch_bigene",
-                revision="main",
+                revision="d5a65e44bae43a9ba9f2fdc03056dff9c12f6631",
             )
         ],
         primary_metric_id="f1",
@@ -67,7 +67,7 @@ class ModACParalogyBiGeneMining(Task):
         datasets=[
             Dataset(
                 path="tattabio/modac_paralogy_bigene",
-                revision="main",
+                revision="241ca6397856e3360da04422d54933035b1fab87",
             )
         ],
         primary_metric_id="recall_at_5",

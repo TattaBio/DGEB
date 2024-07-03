@@ -58,12 +58,12 @@ class ArchRetrieval(Task):
         datasets=[
             Dataset(
                 path="tattabio/arch_retrieval",
-                revision="main",
+                revision="a19124322604a21b26b1b3c13a1bd0b8a63c9f7b",
             ),
             Dataset(
                 path="tattabio/arch_retrieval_qrels",
                 description="Relevance between query and corpus proteins",
-                revision="main",
+                revision="3f142f2f9a0995d56c6e77188c7251761450afcf",
             ),
         ],
         primary_metric_id="map_at_5",
@@ -83,12 +83,12 @@ class EukRetrieval(Task):
         datasets=[
             Dataset(
                 path="tattabio/euk_retrieval",
-                revision="main",
+                revision="c93dc56665cedd19fbeaea9ace146f2474c895f0",
             ),
             Dataset(
                 path="tattabio/euk_retrieval_qrels",
                 description="Relevance between query and corpus proteins",
-                revision="main",
+                revision="a5aa01e9b9738074aba57fc07434e352c4c71e4b",
             ),
         ],
         primary_metric_id="map_at_5",

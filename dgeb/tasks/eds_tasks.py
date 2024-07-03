@@ -64,11 +64,11 @@ class RpobBacPhylogeny(Task):
         datasets=[
             Dataset(
                 path="tattabio/rpob_bac_phylogeny_sequences",
-                revision="main",
+                revision="b833ef8d8d873ea5387540562873f41d073d3e03",
             ),
             Dataset(
                 path="tattabio/rpob_bac_phylogeny_distances",
-                revision="main",
+                revision="0594e1501ac9fd0e3de49257b8ec318c2a0ea6f7",
             ),
         ],
         primary_metric_id="top_corr",
@@ -88,11 +88,11 @@ class RpobArchPhylogeny(Task):
         datasets=[
             Dataset(
                 path="tattabio/rpob_arch_phylogeny_sequences",
-                revision="main",
+                revision="10de75b9f5ad12340d629fd1ad015ef4319d6ee4",
             ),
             Dataset(
                 path="tattabio/rpob_arch_phylogeny_distances",
-                revision="main",
+                revision="2a585f0e135fe74b8ae6d31e7801c6031b0dcc18",
             ),
         ],
         primary_metric_id="top_corr",
@@ -112,11 +112,11 @@ class FeFePhylogeny(Task):
         datasets=[
             Dataset(
                 path="tattabio/fefe_phylogeny_sequences",
-                revision="main",
+                revision="bce06d79d9ce58413e7bcbed6943905d1afb8b26",
             ),
             Dataset(
                 path="tattabio/fefe_phylogeny_distances",
-                revision="main",
+                revision="d6357cee9b4071a8dcdeef54083006f0d5e94fd2",
             ),
         ],
         primary_metric_id="top_corr",
@@ -136,11 +136,11 @@ class Bac16SPhylogeny(Task):
         datasets=[
             Dataset(
                 path="tattabio/bac_16S_sequences",
-                revision="main",
+                revision="efde1456b86748909cbcfecb07d783756d570aa3",
             ),
             Dataset(
                 path="tattabio/bac_16S_distances",
-                revision="main",
+                revision="5c8ba5dfa600bb930d34af2fbc2b17f0acab62d3",
             ),
         ],
         primary_metric_id="top_corr",
@@ -160,11 +160,11 @@ class Arch16SPhylogeny(Task):
         datasets=[
             Dataset(
                 path="tattabio/arch_16S_sequences",
-                revision="main",
+                revision="e0f0b5d5bd4b08a329b08c2bf4cc800781dff7f0",
             ),
             Dataset(
                 path="tattabio/arch_16S_distances",
-                revision="main",
+                revision="b0356b632a954be70cefd57e3a02e7e1ccd34408",
             ),
         ],
         primary_metric_id="top_corr",
@@ -184,11 +184,11 @@ class Euk18SPhylogeny(Task):
         datasets=[
             Dataset(
                 path="tattabio/euk_18S_sequences",
-                revision="main",
+                revision="5174cb3b2c5c46b61307fd1c2c08f5c432655196",
             ),
             Dataset(
                 path="tattabio/euk_18S_distances",
-                revision="main",
+                revision="c4cea4fbb1185d08e0e01fd28ffb8b06a25025da",
             ),
         ],
         primary_metric_id="top_corr",
