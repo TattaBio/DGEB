@@ -1,11 +1,17 @@
 import gradio as gr
 from typing import List
-from lib.models import TaskResults, gen_data
 import pandas as pd
+import importlib.util
 
+# HACK: very hacky way to import from parent directory, while avoiding needing all the deps of the parent package
+results_path = "../dgeb/results.py"
 
-# Example task results that conforms to above data specification
-mock_results = gen_data(n_models=8, n_tasks=50)
+# Load the module
+spec = importlib.util.spec_from_file_location("results", results_path)
+results = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(results)
+TaskResults = results.TaskResults
+mock_task_results = results.mock_task_results
 
 
 def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
@@ -54,7 +60,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
     return df
 
 
-df = task_results_to_df(mock_results)
+df = task_results_to_df([mock_task_results])
 with gr.Blocks() as demo:
 
     def update_df(model_search: str) -> pd.DataFrame:
