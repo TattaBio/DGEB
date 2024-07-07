@@ -5,7 +5,8 @@ WORKDIR /app
 
 # install curl
 RUN apt-get update && apt-get install -y curl
-ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh
+ADD https://astral.sh/uv/install.sh /install.sh
+RUN chmod +x /install.sh
 RUN /install.sh && rm /install.sh
 
 # install deps
