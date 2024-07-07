@@ -1,5 +1,5 @@
 import gradio as gr
-from typing import List, Any
+from typing import List
 from lib.models import TaskResults, gen_data
 import pandas as pd
 
@@ -60,10 +60,8 @@ with gr.Blocks() as demo:
     def update_df(model_search: str) -> pd.DataFrame:
         # reset to original df, don't want to filter on filtered df
         # because once filtered, it will keep getting smaller
-        filtered_df: Any = df.copy()
-        if model_search == "":
-            pass
-        else:
+        filtered_df: pd.DataFrame = df.copy()
+        if model_search:
             filtered_df = df[df["Model"].str.contains(model_search, case=False)]
         return filtered_df
 
@@ -96,7 +94,9 @@ with gr.Blocks() as demo:
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
+                    ).dropna(
+                        axis=1, how="all"
+                    )  # drop all NaN columns for Overall tab
 
                     data_frame = gr.DataFrame(filtered_df)
                     model_search.change(
