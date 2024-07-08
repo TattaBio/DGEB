@@ -1,3 +1,4 @@
+import math
 import json
 from pathlib import Path
 import gradio as gr
@@ -63,18 +64,30 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
     for res in model_results:
         task = res.task
         model = res.model
+        print(f"Processing {task.display_name} for {model.hf_name}")
         for layer in res.results:
+            total_layers = model.num_layers - 1
+            mid_layer = math.ceil(total_layers / 2)
+            if mid_layer == layer.layer_number:
+                layer.layer_display_name = "mid"
+            elif total_layers == layer.layer_number:
+                layer.layer_display_name = "last"
+
             if layer.layer_display_name not in ["mid", "last"]:
+                # calculate if the layer is mid or last
+                print(
+                    f"Layer {layer.layer_number} is not mid or last out of {total_layers}. Skipping"
+                )
                 continue
             else:
                 # For each Metric in the Layer
                 # pivoting the data so that each metric is a row
-                metric_ids = [metric.metric_id for metric in layer.metrics]
+                metric_ids = [metric.id for metric in layer.metrics]
                 metric_values = [metric.value for metric in layer.metrics]
                 data_rows.append(
                     {
                         "Task Name": task.display_name,
-                        "Task Category": task.category,
+                        "Task Category": task.type,
                         "Model": model.hf_name,
                         "Layer": layer.layer_display_name,
                         **dict(zip(metric_ids, metric_values)),
@@ -143,7 +156,9 @@ with gr.Blocks() as demo:
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
+                    ).dropna(
+                        axis=1, how="all"
+                    )  # drop all NaN columns for Overall tab
 
                     data_frame = gr.DataFrame(filtered_df)
                     model_search.change(
