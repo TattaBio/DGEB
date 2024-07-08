@@ -20,8 +20,7 @@ logger = logging.getLogger(__name__)
 def run_eds_task(model: BioSeqTransformer, metadata: TaskMetadata) -> TaskResult:
     """Evaluate phylogeny distance correlation task. Utilizes the Evolutionary Distance Similarity (EDS) evaluator."""
     if len(metadata.datasets) != 2:
-        raise ValueError(
-            "Phylogeny tasks require 2 datasets: sequences and distances.")
+        raise ValueError("Phylogeny tasks require 2 datasets: sequences and distances.")
 
     ds = metadata.datasets[0].load()["train"]
     distance_df = metadata.datasets[1].load()["train"].to_pandas()
