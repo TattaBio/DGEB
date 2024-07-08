@@ -1,8 +1,10 @@
+from collections import defaultdict
 import math
 import json
 from pathlib import Path
 import gradio as gr
 from typing import List
+from gradio.themes import default
 import pandas as pd
 import importlib.util
 from pydantic import ValidationError, parse_obj_as
@@ -61,6 +63,12 @@ def load_results() -> List[TaskResults]:
 def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
     # Initialize an empty list to hold all rows of data
     data_rows = []
+    # This will be used to calculate the average of each metric for each model, layer, and category
+    aggregate_metrics = defaultdict(  # model
+        lambda: defaultdict(  # layer
+            lambda: defaultdict(lambda: {"count": 0, "total": 0})  # category
+        )
+    )
     for res in model_results:
         task = res.task
         model = res.model
@@ -84,34 +92,38 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                 # pivoting the data so that each metric is a row
                 metric_ids = [metric.id for metric in layer.metrics]
                 metric_values = [metric.value for metric in layer.metrics]
+                zipped = zip(metric_ids, metric_values)
                 data_rows.append(
                     {
                         "Task Name": task.display_name,
                         "Task Category": task.type,
                         "Model": model.hf_name,
                         "Layer": layer.layer_display_name,
-                        **dict(zip(metric_ids, metric_values)),
+                        **dict(zipped),
                     }
                 )
-    categories = set([res.task.type for res in model_results])
-    all_layers = set(
-        [
-            (res.model.hf_name, layer.layer_display_name)
-            for res in model_results
-            for layer in res.results
-        ]
-    )
-    for model_name, layer_name in all_layers:
-        for category in categories:
-            data_rows.append(
-                {
-                    "Task Name": "Overall",
-                    "Task Category": category,
-                    "Model": model_name,
-                    "Layer": layer_name,
-                    "average": -1,
-                }
-            )
+                for metric in layer.metrics:
+                    aggregate_metrics[model.hf_name][layer.layer_display_name][
+                        task.type
+                    ]["count"] += 1
+                    aggregate_metrics[model.hf_name][layer.layer_display_name][
+                        task.type
+                    ]["total"] += metric.value
+
+    for model, layers in aggregate_metrics.items():
+        for layer, categories in layers.items():
+            for category, metrics in categories.items():
+                count = metrics["count"]
+                total = metrics["total"]
+                data_rows.append(
+                    {
+                        "Task Name": "Overall",
+                        "Task Category": category,
+                        "Model": model,
+                        "Layer": layer,
+                        "Average": total / count,
+                    }
+                )
     df = pd.DataFrame(data_rows)
     return df
 
