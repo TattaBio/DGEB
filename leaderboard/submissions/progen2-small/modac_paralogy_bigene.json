@@ -1,0 +1,85 @@
+{
+  "task": {
+    "id": "modac_paralogy_bigene",
+    "display_name": "ModAC Paralogy BiGene",
+    "description": "Evaluate on paralogy bitext matching task between paralogous protein (ModA and ModC).",
+    "modality": "protein",
+    "type": "bigene_mining",
+    "datasets": [
+      {
+        "path": "tattabio/modac_paralogy_bigene",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "hugohrban/progen2-small",
+    "revision": "...",
+    "num_layers": 12,
+    "num_params": 151148576,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 6,
+      "layer_display_name": "6",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 4.4952467261118094e-7
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 8.984467652322665e-7
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.0006702412868632708
+        }
+      ]
+    },
+    {
+      "layer_number": 11,
+      "layer_display_name": "11",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.0006888223332782205
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.0020107238605898124
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.0007064493294447139
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.0020107238605898124
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "task": {
+    "id": "MIBIG_protein_classification",
+    "display_name": "MIBiG Classification",
+    "description": "Biosynthetic Gene cluster classification using protein sequences on MIBIG dataset.",
+    "modality": "protein",
+    "type": "classification",
+    "datasets": [
+      {
+        "path": "tattabio/mibig_classification_prot",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "hugohrban/progen2-medium",
+    "revision": "...",
+    "num_layers": 27,
+    "num_params": 764803616,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 13,
+      "layer_display_name": "13",
+      "metrics": [
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.6989990988890816
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.691609977324263
+        },
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.7986955550826269
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.652675371834789
+        },
+        {
+          "id": "lrap",
+          "display_name": "lrap",
+          "description": null,
+          "value": 0.8151927437641735
+        }
+      ]
+    },
+    {
+      "layer_number": 26,
+      "layer_display_name": "26",
+      "metrics": [
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.6510666703327254
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.6145124716553289
+        },
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.79271911663216
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.597401875633424
+        },
+        {
+          "id": "lrap",
+          "display_name": "lrap",
+          "description": null,
+          "value": 0.7605820105820112
+        }
+      ]
+    }
+  ]
+}

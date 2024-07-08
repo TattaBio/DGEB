@@ -1,0 +1,86 @@
+{
+  "task": {
+    "id": "bacarch_bigene",
+    "display_name": "BacArch BiGene",
+    "description": "Evaluate on BacArch bigene matching task between bacterial (E.coli K-12) proteins and archaeal (Sulfolobus acidocaldarius DSM 639) proteins.",
+    "modality": "protein",
+    "type": "bigene_mining",
+    "datasets": [
+      {
+        "path": "tattabio/bac_arch_bigene",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t6_8M_UR50D",
+    "revision": "...",
+    "num_layers": 6,
+    "num_params": 7840121,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 3,
+      "layer_display_name": "3",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.24651143056803437
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.30943396226415093
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.26085981104849026
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.30943396226415093
+        }
+      ]
+    },
+    {
+      "layer_number": 5,
+      "layer_display_name": "5",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.43651991614255764
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.5132075471698113
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.4573989218328841
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.5132075471698113
+        }
+      ]
+    }
+  ],
+  "geb_version": "1.0"
+}

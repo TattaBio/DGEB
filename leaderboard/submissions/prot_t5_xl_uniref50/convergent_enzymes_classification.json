@@ -1,0 +1,62 @@
+{
+  "task": {
+    "id": "convergent_enzymes_classification",
+    "display_name": "Convergent Enzymes Classification",
+    "description": "Evaluate on convergent enzymes classification task.",
+    "modality": "protein",
+    "type": "classification",
+    "datasets": [
+      {
+        "path": "tattabio/convergent_enzymes",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "Rostlab/prot_t5_xl_uniref50",
+    "revision": "...",
+    "num_layers": 24,
+    "num_params": 1208141824,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 12,
+      "layer_display_name": "12",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.3
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.24830357142857143
+        }
+      ]
+    },
+    {
+      "layer_number": 23,
+      "layer_display_name": "23",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.205
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.15984523809523807
+        }
+      ]
+    }
+  ],
+  "geb_version": "1.0"
+}

@@ -1,0 +1,97 @@
+{
+  "task": {
+    "id": "modac_paralogy_bigene",
+    "display_name": "ModAC Paralogy BiGene",
+    "description": "Evaluate on paralogy bitext matching task between paralogous protein (ModA and ModC).",
+    "modality": "protein",
+    "type": "bigene_mining",
+    "datasets": [
+      {
+        "path": "tattabio/modac_paralogy_bigene",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "recall_at_5"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t36_3B_UR50D",
+    "revision": "...",
+    "num_layers": 36,
+    "num_params": 2841627041,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 18,
+      "layer_display_name": "18",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 4.4952467261118094e-7
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 8.984467652322665e-7
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "recall_at_5",
+          "display_name": "recall_at_5",
+          "description": null,
+          "value": 0.004021447721179625
+        }
+      ]
+    },
+    {
+      "layer_number": 35,
+      "layer_display_name": "35",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 4.513409339146605e-7
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 9.02074410313958e-7
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "recall_at_5",
+          "display_name": "recall_at_5",
+          "description": null,
+          "value": 0.014075067024128687
+        }
+      ]
+    }
+  ]
+}

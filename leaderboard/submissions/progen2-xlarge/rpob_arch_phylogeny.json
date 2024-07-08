@@ -1,0 +1,89 @@
+{
+  "task": {
+    "id": "rpob_arch_phylogeny",
+    "display_name": "RpoB Archaeal Phylogeny",
+    "description": "Evaluate on RpoB phylogeny distance correlation task for Archaeal sequences.",
+    "modality": "protein",
+    "type": "eds",
+    "datasets": [
+      {
+        "path": "tattabio/rpob_arch_phylogeny_sequences",
+        "revision": "main"
+      },
+      {
+        "path": "tattabio/rpob_arch_phylogeny_distances",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "top_corr"
+  },
+  "model": {
+    "hf_name": "hugohrban/progen2-xlarge",
+    "revision": "...",
+    "num_layers": 32,
+    "num_params": 6443638816,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 16,
+      "layer_display_name": "16",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.20539648269638539
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.29599541809584246
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.3197021543930568
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.3197021543930568
+        }
+      ]
+    },
+    {
+      "layer_number": 31,
+      "layer_display_name": "31",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.4102283966405205
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.49460456948132403
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.5014444322119149
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.5014444322119149
+        }
+      ]
+    }
+  ]
+}

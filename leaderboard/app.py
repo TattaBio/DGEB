@@ -1,7 +1,10 @@
+import json
+from pathlib import Path
 import gradio as gr
 from typing import List
 import pandas as pd
 import importlib.util
+from pydantic import ValidationError, parse_obj_as
 
 # HACK: very hacky way to import from parent directory, while avoiding needing all the deps of the parent package
 results_path = "../dgeb/results.py"
@@ -11,7 +14,47 @@ spec = importlib.util.spec_from_file_location("results", results_path)
 results = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(results)
 TaskResults = results.TaskResults
-mock_task_results = results.mock_task_results
+
+# Assuming the class definitions provided above are complete and imported here
+
+
+def load_json_files_from_directory(directory_path: Path) -> List[dict]:
+    """
+    Recursively load all JSON files within the specified directory path.
+
+    :param directory_path: Path to the directory to search for JSON files.
+    :return: List of dictionaries loaded from JSON files.
+    """
+    json_files_content = []
+    for json_file in directory_path.rglob("*.json"):  # Recursively find all JSON files
+        try:
+            with open(json_file, "r", encoding="utf-8") as file:
+                json_content = json.load(file)
+                json_files_content.append(json_content)
+        except Exception as e:
+            print(f"Error loading {json_file}: {e}")
+    return json_files_content
+
+
+def load_results() -> List[TaskResults]:
+    """
+    Recursively load JSON files in ./submissions/** and return a list of TaskResults objects.
+    """
+    submissions_path = Path("./submissions")
+    json_contents = load_json_files_from_directory(submissions_path)
+
+    task_results_objects = []
+    for content in json_contents:
+        try:
+            task_result = parse_obj_as(
+                TaskResults, content
+            )  # Using Pydantic's parse_obj_as for creating TaskResults objects
+            task_results_objects.append(task_result)
+        except ValidationError as e:
+            print(f"Error parsing TaskResults object: {e}")
+            raise e
+
+    return task_results_objects
 
 
 def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
@@ -32,15 +75,15 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                     {
                         "Task Name": task.display_name,
                         "Task Category": task.category,
-                        "Model": model.display_name,
+                        "Model": model.hf_name,
                         "Layer": layer.layer_display_name,
                         **dict(zip(metric_ids, metric_values)),
                     }
                 )
-    categories = set([res.task.category for res in model_results])
+    categories = set([res.task.type for res in model_results])
     all_layers = set(
         [
-            (res.model.display_name, layer.layer_display_name)
+            (res.model.hf_name, layer.layer_display_name)
             for res in model_results
             for layer in res.results
         ]
@@ -60,7 +103,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
     return df
 
 
-df = task_results_to_df([mock_task_results])
+df = task_results_to_df(load_results())
 with gr.Blocks() as demo:
 
     def update_df(model_search: str) -> pd.DataFrame:
@@ -100,9 +143,7 @@ with gr.Blocks() as demo:
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(
-                        axis=1, how="all"
-                    )  # drop all NaN columns for Overall tab
+                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
 
                     data_frame = gr.DataFrame(filtered_df)
                     model_search.change(

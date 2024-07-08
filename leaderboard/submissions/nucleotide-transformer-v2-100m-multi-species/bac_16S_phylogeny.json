@@ -1,0 +1,89 @@
+{
+  "task": {
+    "id": "bac_16S_phylogeny",
+    "display_name": "16S Bacterial Phylogeny",
+    "description": "Evaluate on 16S Bacterial phylogeny distance correlation task.",
+    "modality": "dna",
+    "type": "eds",
+    "datasets": [
+      {
+        "path": "tattabio/bac_16S_sequences",
+        "revision": "main"
+      },
+      {
+        "path": "tattabio/bac_16S_distances",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "top_corr"
+  },
+  "model": {
+    "hf_name": "InstaDeepAI/nucleotide-transformer-v2-100m-multi-species",
+    "revision": "...",
+    "num_layers": 22,
+    "num_params": 97889132,
+    "embed_dim": 512
+  },
+  "results": [
+    {
+      "layer_number": 11,
+      "layer_display_name": "11",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.31696265952440167
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.33987984901886903
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.3384167637841732
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.33987984901886903
+        }
+      ]
+    },
+    {
+      "layer_number": 21,
+      "layer_display_name": "21",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.17067320280339623
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.22902433707354852
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.22270969106467697
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.22902433707354852
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "task": {
+    "id": "convergent_enzymes_classification",
+    "display_name": "Convergent Enzymes Classification",
+    "description": "Evaluate on convergent enzymes classification task.",
+    "modality": "protein",
+    "type": "classification",
+    "datasets": [
+      {
+        "path": "tattabio/convergent_enzymes",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t30_150M_UR50D",
+    "revision": "...",
+    "num_layers": 30,
+    "num_params": 148795481,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 15,
+      "layer_display_name": "15",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.2975
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.24579761904761901
+        }
+      ]
+    },
+    {
+      "layer_number": 29,
+      "layer_display_name": "29",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.25
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.20341666666666666
+        }
+      ]
+    }
+  ],
+  "geb_version": "1.0"
+}

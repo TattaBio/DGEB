@@ -1,0 +1,90 @@
+{
+  "task": {
+    "id": "rpob_arch_phylogeny",
+    "display_name": "RpoB Phylogeny",
+    "description": "Evaluate on RpoB phylogeny distance correlation task.",
+    "modality": "protein",
+    "type": "eds",
+    "datasets": [
+      {
+        "path": "tattabio/rpob_arch_phylogeny_sequences",
+        "revision": "main"
+      },
+      {
+        "path": "tattabio/rpob_arch_phylogeny_distances",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "top_corr"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t30_150M_UR50D",
+    "revision": "...",
+    "num_layers": 30,
+    "num_params": 148795481,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 15,
+      "layer_display_name": "15",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.1768507833995429
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.18397144956044925
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.1845894903038125
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.1845894903038125
+        }
+      ]
+    },
+    {
+      "layer_number": 29,
+      "layer_display_name": "29",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.34832145241555046
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.3731512162710203
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.34706946582411347
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.3731512162710203
+        }
+      ]
+    }
+  ],
+  "geb_version": "1.0"
+}

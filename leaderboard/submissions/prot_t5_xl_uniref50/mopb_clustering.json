@@ -1,0 +1,50 @@
+{
+  "task": {
+    "id": "mopb_clustering",
+    "display_name": "MopB Clustering",
+    "description": "Evaluate on MopB clustering task.",
+    "modality": "protein",
+    "type": "clustering",
+    "datasets": [
+      {
+        "path": "tattabio/mopb_clustering",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "v_measure"
+  },
+  "model": {
+    "hf_name": "Rostlab/prot_t5_xl_uniref50",
+    "revision": "...",
+    "num_layers": 24,
+    "num_params": 1208141824,
+    "emb_dim": 0
+  },
+  "results": [
+    {
+      "layer_number": 12,
+      "layer_display_name": "12",
+      "metrics": [
+        {
+          "id": "v_measure",
+          "display_name": "v_measure",
+          "description": null,
+          "value": 0.8721358813405494
+        }
+      ]
+    },
+    {
+      "layer_number": 23,
+      "layer_display_name": "23",
+      "metrics": [
+        {
+          "id": "v_measure",
+          "display_name": "v_measure",
+          "description": null,
+          "value": 0.8476433301105049
+        }
+      ]
+    }
+  ],
+  "geb_version": "1.0"
+}

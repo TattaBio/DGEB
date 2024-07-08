@@ -1,0 +1,49 @@
+{
+  "task": {
+    "id": "ecoli_rna_clustering",
+    "display_name": "E.coli RNA Clustering",
+    "description": "Evaluate on RNA clustering task for sRNA/tRNA/rRNA segments in E.coli K-12.",
+    "modality": "dna",
+    "type": "clustering",
+    "datasets": [
+      {
+        "path": "tattabio/e_coli_rnas",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "v_measure"
+  },
+  "model": {
+    "hf_name": "InstaDeepAI/nucleotide-transformer-2.5b-multi-species",
+    "revision": "...",
+    "num_layers": 32,
+    "num_params": 2547801226,
+    "embed_dim": 2560
+  },
+  "results": [
+    {
+      "layer_number": 16,
+      "layer_display_name": "16",
+      "metrics": [
+        {
+          "id": "v_measure",
+          "display_name": "v_measure",
+          "description": null,
+          "value": 0.1895135298164807
+        }
+      ]
+    },
+    {
+      "layer_number": 31,
+      "layer_display_name": "31",
+      "metrics": [
+        {
+          "id": "v_measure",
+          "display_name": "v_measure",
+          "description": null,
+          "value": 0.12248243519915075
+        }
+      ]
+    }
+  ]
+}

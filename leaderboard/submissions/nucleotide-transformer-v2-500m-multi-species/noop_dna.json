@@ -1,0 +1,43 @@
+{
+  "task": {
+    "id": "noop_dna",
+    "display_name": "NoOp Task",
+    "description": "This task is used for testing and does nothing.",
+    "modality": "dna",
+    "type": "classification",
+    "datasets": [
+      {
+        "path": "",
+        "revision": "main"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "InstaDeepAI/nucleotide-transformer-v2-500m-multi-species",
+    "revision": "...",
+    "num_layers": 29,
+    "num_params": 498345436,
+    "embed_dim": 1024
+  },
+  "results": [
+    {
+      "layer_number": 32,
+      "layer_display_name": "32",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.5
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.5
+        }
+      ]
+    }
+  ]
+}
