@@ -52,7 +52,7 @@ mteb = "dgeb.cli:main"
 dev = ["ruff>=0.0.254", "pytest", "pytest-xdist"]
 
 [tool.setuptools.packages.find]
-exclude = ["tests", "results"]
+exclude = ["tests", "results", "leaderboard", "Dockerfile"]
 
 [tool.setuptools.package-data]
 "*" = ["*.json"]
