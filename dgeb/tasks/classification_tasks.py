@@ -34,7 +34,7 @@ def split_sequences(
         seq = example["Sequence"]
         # Split by chunks of max_seq_length.
         seq_split = [
-            seq[i : i + max_seq_length] for i in range(0, len(seq), max_seq_length)
+            seq[i: i + max_seq_length] for i in range(0, len(seq), max_seq_length)
         ]
         # Repeat other fields by the number of splits.
         example = {
@@ -85,7 +85,7 @@ class EnzymeCommissionClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/ec_classification",
-                revision="d83aba56d785df48bd3b4acafc536ff8c03e7d98",
+                revision="ead5570168e6969a5149f6861e8a33d6b5d22498",
             )
         ],
         primary_metric_id="f1",
@@ -105,7 +105,7 @@ class EnzymeCommissionDNAClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/ec_classification_dna",
-                revision="e78328541bb16e7cda16830d9844c09cbf4e682d",
+                revision="cd61c74b4930cf9f1963e6d73ff7f14e2c8e74dd",
             )
         ],
         primary_metric_id="f1",
@@ -153,7 +153,8 @@ def run_mibig_task(model: BioSeqTransformer, metadata: TaskMetadata) -> TaskResu
     test_ids = ds["test"]["Entry"]
     train_labels = ds["train"]["class"]
     test_labels = ds["test"]["class"]
-    train_id_to_label = {id: label for id, label in zip(train_ids, train_labels)}
+    train_id_to_label = {id: label for id,
+                         label in zip(train_ids, train_labels)}
     test_id_to_label = {id: label for id, label in zip(test_ids, test_labels)}
     # Mean pool embeds with the same ID.
     train_ids, train_embeds = merge_split_elem_embeds(train_ids, train_embeds)

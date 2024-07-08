@@ -20,7 +20,8 @@ logger = logging.getLogger(__name__)
 def run_eds_task(model: BioSeqTransformer, metadata: TaskMetadata) -> TaskResult:
     """Evaluate phylogeny distance correlation task. Utilizes the Evolutionary Distance Similarity (EDS) evaluator."""
     if len(metadata.datasets) != 2:
-        raise ValueError("Phylogeny tasks require 2 datasets: sequences and distances.")
+        raise ValueError(
+            "Phylogeny tasks require 2 datasets: sequences and distances.")
 
     ds = metadata.datasets[0].load()["train"]
     distance_df = metadata.datasets[1].load()["train"].to_pandas()
@@ -93,6 +94,54 @@ class RpobArchPhylogeny(Task):
             Dataset(
                 path="tattabio/rpob_arch_phylogeny_distances",
                 revision="2a585f0e135fe74b8ae6d31e7801c6031b0dcc18",
+            ),
+        ],
+        primary_metric_id="top_corr",
+    )
+
+    def run(self, model: BioSeqTransformer) -> TaskResult:
+        return run_eds_task(model, self.metadata)
+
+
+class RpobBacDNAPhylogeny(Task):
+    metadata = TaskMetadata(
+        id="rpob_bac_dna_phylogeny",
+        display_name="RpoB Bacterial Phylogeny",
+        description="Evaluate on RpoB phylogeny distance correlation task for Bacterial DNA sequences.",
+        type="eds",
+        modality=Modality.DNA,
+        datasets=[
+            Dataset(
+                path="tattabio/rpob_bac_dna_phylogeny_sequences",
+                revision="8e137d3fb8886d8739ce08d1918745444c7d30d6",
+            ),
+            Dataset(
+                path="tattabio/rpob_bac_dna_phylogeny_distances",
+                revision="67339e271b2a1602208153d53d70d35ba6fa8876",
+            ),
+        ],
+        primary_metric_id="top_corr",
+    )
+
+    def run(self, model: BioSeqTransformer) -> TaskResult:
+        return run_eds_task(model, self.metadata)
+
+
+class RpobArchDNAPhylogeny(Task):
+    metadata = TaskMetadata(
+        id="rpob_arch_dna_phylogeny",
+        display_name="RpoB Archaeal Phylogeny",
+        description="Evaluate on RpoB phylogeny distance correlation task for Archaeal DNA sequences.",
+        type="eds",
+        modality=Modality.DNA,
+        datasets=[
+            Dataset(
+                path="tattabio/rpob_arch_dna_phylogeny_sequences",
+                revision="4453552a0e1021fee8697c71a559f4d3f6da2408",
+            ),
+            Dataset(
+                path="tattabio/rpob_arch_dna_phylogeny_distances",
+                revision="51df97684a927ec2203568e80175ef26a62db039",
             ),
         ],
         primary_metric_id="top_corr",
