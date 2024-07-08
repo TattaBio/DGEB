@@ -8,7 +8,12 @@ version = "0.0.8"
 description = "Diverse Genomic Embedding Benchmark"
 readme = "README.md"
 license = { file = "LICENSE" }
-keywords = ["scientific software", "genomic embeddings", "machine learning", "benchmark"]
+keywords = [
+    "scientific software",
+    "genomic embeddings",
+    "machine learning",
+    "benchmark",
+]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Environment :: Console",
@@ -32,29 +37,29 @@ dependencies = [
     "seaborn>=0.13.2",
     "torch>=2.3.1",
     "tqdm>=4.66.4",
-    "transformers>=4.41.2"
+    "transformers>=4.41.2",
 ]
 
 [project.urls]
-homepage = "https://github.com/TattaBio/dgeb"
+homepage = "https://github.com/TattaBio/DGEB"
 "Huggingface Organization" = "https://huggingface.co/tattabio"
-"Source Code" = "https://github.com/TattaBio/dgeb"
+"Source Code" = "https://github.com/TattaBio/DGEB"
+
+[project.scripts]
+mteb = "dgeb.cli:main"
 
 [project.optional-dependencies]
 dev = ["ruff>=0.0.254", "pytest", "pytest-xdist"]
 
 [tool.setuptools.packages.find]
-exclude = ["tests", "results"]
+exclude = ["tests", "results", "leaderboard", "Dockerfile"]
 
 [tool.setuptools.package-data]
 "*" = ["*.json"]
 
 [tool.ruff]
 target-version = "py38"
-exclude = [
- ".venv",
- "build/"
-]
+exclude = [".venv", "build/"]
 line-length = 88
 indent-width = 4
 
@@ -97,7 +102,18 @@ env = "GIT_COMMIT_AUTHOR"
 default = "semantic-release <semantic-release>"
 
 [tool.semantic_release.commit_parser_options]
-allowed_tags = ["build", "chore", "ci", "docs", "feat", "fix", "perf", "style", "refactor", "test"]
+allowed_tags = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "style",
+    "refactor",
+    "test",
+]
 minor_tags = ["feat"]
 patch_tags = ["fix", "perf"]
 default_bump_level = 0

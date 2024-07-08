@@ -28,17 +28,17 @@
     <a href="https://huggingface.co/spaces/dgeb"><img style="float: middle; padding: 10px 10px 10px 10px;" width="100" height="100" src="./docs/images/tatta_logo.png" /></a>
 </h3>
 
-
-DGEB is a benchmark for evaluating biological sequence models on functional and evolutionary information. 
+DGEB is a benchmark for evaluating biological sequence models on functional and evolutionary information.
 
 DGEB is designed to evaluate model embeddings using:
- - Diverse sequences accross the tree of life.
- - Diverse tasks that capture different aspects of biological function.
- - Both amino acid and nucleotide sequences.
 
-The current version of DGEB consists of 18 datasets covering all three domains of life (Bacteria, Archaea and Eukarya). DGEB evaluates embeddings using six different embedding tasks: Classification, BiGene mining, Evolutionary Distance Similarity (EDS), Pair Classification, Clustering, and Retrieval. 
+- Diverse sequences accross the tree of life.
+- Diverse tasks that capture different aspects of biological function.
+- Both amino acid and nucleotide sequences.
 
-We welcome contributions of new tasks and datasets. 
+The current version of DGEB consists of 18 datasets covering all three domains of life (Bacteria, Archaea and Eukarya). DGEB evaluates embeddings using six different embedding tasks: Classification, BiGene mining, Evolutionary Distance Similarity (EDS), Pair Classification, Clustering, and Retrieval.
+
+We welcome contributions of new tasks and datasets.
 
 ## Installation
 
@@ -50,18 +50,17 @@ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://
 
 ## Usage
 
-- Launch evaluation using the python script (see [run_dgeb.py](https://github.com/tattabio/dgeb/blob/main/run_dgeb.py)):
+- Launch evaluation using the python script (see [cli.py](https://github.com/tattabio/dgeb/blob/main/dgeb/cli.py)):
 
 ```bash
-python run_dgeb.py --model facebook/esm2_t6_8M_UR50D
+dgeb --model facebook/esm2_t6_8M_UR50D
 ```
 
 - To see all supported models and tasks:
 
 ```bash
-python run_dgeb.py --help
+dgeb --help
 ```
-
 
 - Using the python API:
 
@@ -104,7 +103,6 @@ evaluation = dgeb.DGEB(tasks=tasks)
 evaluation.run(model)
 ```
 
-
 ### Evaluating on a custom dataset
 
 **We strongly encourage users to contribute their custom datasets to DGEB. Please open a PR adding your dataset so that the community can benefit!**
@@ -141,10 +139,10 @@ evaluation = dgeb.DGEB(tasks=[MyCustomTask])
 evaluation.run(model)
 ```
 
-
 ## Leaderboard
 
-TODO(nishant): 
+TODO(nishant):
+
 - Add link to leaderboard
 - Instruction for uploading results
 
@@ -157,7 +155,3 @@ DGEB follows the design of text embedding bechmark [MTEB](https://github.com/emb
 DGEB was introduced in "[DGEB: Diverse Genomic Embedding Benchmark]()", feel free to cite:
 
 TODO(andre): bibtex
-
-
-
-
