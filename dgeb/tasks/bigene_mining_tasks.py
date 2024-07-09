@@ -25,8 +25,7 @@ def run_bigene_mining_tasks(
     embeds1 = model.encode(ds["Seq1"])
     embeds2 = model.encode(ds["Seq2"])
     for i, layer in enumerate(model.layers):
-        evaluator = BiGeneMiningEvaluator(
-            embeds1[:, i], embeds2[:, i], top_k=top_k)
+        evaluator = BiGeneMiningEvaluator(embeds1[:, i], embeds2[:, i], top_k=top_k)
         layer_results["layers"][layer] = evaluator()
         logger.info(
             f"Layer: {layer}, {metadata.display_name} matching results: {layer_results['layers'][layer]}"
