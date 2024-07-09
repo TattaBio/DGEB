@@ -46,7 +46,7 @@ homepage = "https://github.com/TattaBio/DGEB"
 "Source Code" = "https://github.com/TattaBio/DGEB"
 
 [project.scripts]
-mteb = "dgeb.cli:main"
+dgeb = "dgeb.cli:main"
 
 [project.optional-dependencies]
 dev = ["ruff>=0.0.254", "pytest", "pytest-xdist"]
