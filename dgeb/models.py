@@ -83,7 +83,8 @@ class BioSeqTransformer(ABC):
         self.pool_type = pool_type
 
         if self.gpu_count > 1:
-            self.encoder = torch.nn.DataParallel(self.encoder, device_ids=devices)
+            self.encoder = torch.nn.DataParallel(
+                self.encoder, device_ids=devices)
         self.encoder.to(self.device)
         self.encoder.eval()
 
@@ -93,7 +94,8 @@ class BioSeqTransformer(ABC):
         last_layer_label = f"last ({self.num_layers - 1})"
 
         if layers is None:
-            logger.debug(f"Using default layers: {mid_layer_label}, {last_layer_label}")
+            logger.debug(
+                f"Using default layers: {mid_layer_label}, {last_layer_label}")
             self.layers = [mid_layer, last_layer]
             self.layer_labels = [mid_layer_label, last_layer_label]
         elif layers == "mid":
@@ -139,7 +141,6 @@ class BioSeqTransformer(ABC):
     def metadata(self) -> Dict:
         return {
             "hf_name": self.hf_name,
-            "revision": "...",  # TODO: Fix
             "num_layers": self.num_layers,
             "num_params": self.num_param,
             "embed_dim": self.embed_dim,
@@ -322,7 +323,8 @@ class ProtT5(BioSeqTransformer):
     ) -> BatchEncoding:
         example_sequences = examples["input_seqs"]
         # Add space between amino acids to make sure they are tokenized correctly.
-        example_sequences = [" ".join(sequence) for sequence in example_sequences]
+        example_sequences = [" ".join(sequence)
+                             for sequence in example_sequences]
         example_sequences = [
             re.sub(r"[UZOB]", "X", sequence) for sequence in example_sequences
         ]
@@ -417,7 +419,8 @@ class EvoModel(BioSeqTransformer):
             if layer == self.num_layers - 1 or layer == -1:
                 self.hooks.append(ForwardHook(self.encoder.backbone.norm))
             else:
-                self.hooks.append(ForwardHook(self.encoder.backbone.blocks[layer]))
+                self.hooks.append(ForwardHook(
+                    self.encoder.backbone.blocks[layer]))
 
     def _load_model(self, model_name):
         config = AutoConfig.from_pretrained(
