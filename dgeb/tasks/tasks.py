@@ -108,27 +108,3 @@ class Task(ABC):
         self, model: BioSeqTransformer, layers: Optional[List[int]] = None
     ) -> TaskResult:
         pass
-
-
-class noop(Task):
-    metadata = TaskMetadata(
-        id="noop",
-        display_name="NoOp Task",
-        description="This task is used for testing and does nothing.",
-        type="classification",
-        modality=Modality.PROTEIN,
-        datasets=[
-            Dataset(
-                path="",
-                revision="main",
-            )
-        ],
-        primary_metric_id="f1",
-    )
-
-    def run(self, model: BioSeqTransformer) -> TaskResult:
-        return TaskResult.from_dict(
-            self.metadata,
-            {"layers": {32: {"accuracy": 0.5, "f1": 0.5}}},
-            model.metadata,
-        )
