@@ -55,8 +55,8 @@ class BacArchBiGeneMining(Task):
 
 class ModACParalogyBiGeneMining(Task):
     # ModAC Paralogy matching with top_k=1 is too strict (most models have accuracy < 0.1%)
-    # Instead use recall@5 as the main metric.
-    TOP_K = 5
+    # Instead use recall@50 as the main metric.
+    TOP_K = 50
 
     metadata = TaskMetadata(
         id="modac_paralogy_bigene",
@@ -70,7 +70,7 @@ class ModACParalogyBiGeneMining(Task):
                 revision="241ca6397856e3360da04422d54933035b1fab87",
             )
         ],
-        primary_metric_id="recall_at_5",
+        primary_metric_id=f"recall_at_{TOP_K}",
     )
 
     def run(self, model: BioSeqTransformer) -> TaskResult:
