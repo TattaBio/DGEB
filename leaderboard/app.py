@@ -19,6 +19,7 @@ spec = importlib.util.spec_from_file_location("results", results_path)
 results = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(results)
 TaskResults = results.TaskResults
+GEBModel = results.GEBModel
 
 # Assuming the class definitions provided above are complete and imported here
 
@@ -76,24 +77,44 @@ def load_results() -> List[TaskResults]:
     return task_results_objects
 
 
+def task_results_to_dgeb_score(
+    model: GEBModel, model_results: List[TaskResults]
+) -> dict:
+    best_scores_per_task = []
+    for task_result in model_results:
+        assert (
+            task_result.model.hf_name == model.hf_name
+        ), f"Model names do not match, {task_result.model.hf_name} != {model.hf_name}"
+        primary_metric_id = task_result.task.primary_metric_id
+        scores = []
+        # Get the primary score for each layer.
+        for result in task_result.results:
+            for metric in result.metrics:
+                if metric.id == primary_metric_id:
+                    scores.append(metric.value)
+        best_score = max(scores)
+        best_scores_per_task.append(best_score)
+    # Calculate the average of the best scores for each task.
+    assert len(best_scores_per_task) > 0, f"No tasks found for model {model.hf_name}"
+    dgeb_score = sum(best_scores_per_task) / len(best_scores_per_task)
+    return {
+        "Task Name": "DGEB Score",
+        "Task Category": "DGEB",
+        "Model": model.hf_name,
+        "Num. Parameters (millions)": format_num_params(model.num_params),
+        "Emb. Dimension": model.embed_dim,
+        "Score": dgeb_score,
+    }
+
+
 def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
     # Initialize an empty list to hold all rows of data
     data_rows = []
-    # This will be used to calculate the average of each metric for each model, layer, and category
-    aggregate_metrics = defaultdict(  # model
-        lambda: defaultdict(  # layer
-            lambda: defaultdict(
-                lambda: {
-                    "count": 0,
-                    "total": 0,
-                    "metadata": None,
-                }
-            )
-        )
-    )
+    all_models = {}
     for res in model_results:
         task = res.task
         model = res.model
+        all_models[model.hf_name] = model
         print(f"Processing {task.display_name} for {model.hf_name}")
         for layer in res.results:
             total_layers = model.num_layers - 1
@@ -129,85 +150,15 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         **dict(zipped),
                     }
                 )
-                for metric in layer.metrics:
-                    aggregate_metrics[model.hf_name][layer.layer_display_name][
-                        task.type
-                    ]["count"] += 1
-                    aggregate_metrics[model.hf_name][layer.layer_display_name][
-                        task.type
-                    ]["total"] += metric.value
-                    # We need these to display Num. Parameters (millions) and Emb. Dimension in the final DataFrame
-                    if (
-                        aggregate_metrics[model.hf_name][layer.layer_display_name][
-                            task.type
-                        ].get("metadata", None)
-                        is None
-                    ):
-                        print("No metadata found, setting metadata")
-                        aggregate_metrics[model.hf_name][layer.layer_display_name][
-                            task.type
-                        ]["metadata"] = {
-                            "model_num_params": model.num_params,
-                            "model_embed_dim": model.embed_dim,
-                            "task_modality": task.modality,
-                        }
-    # Add a DGEB task for each model, layer
-    for model, layers in aggregate_metrics.items():
-        for layer, categories in layers.items():
-            for category, metrics in categories.items():
-                metadata = metrics["metadata"]
-                modality = metadata.get("task_modality", None)
-                modality_label = "unknown"
-                if modality is "dna":
-                    modality_label = "NA"
-                elif modality is "protein":
-                    modality_label = "AA"
-                else:
-                    raise ValueError(f"Unknown modality: {modality}")
-                data_rows.append(
-                    {
-                        "Task Name": "Aggregate DGEB Score",
-                        "Task Category": "DGEB",
-                        "Model": model,
-                        "Num. Parameters (millions)": format_num_params(
-                            metadata.get("model_num_params", -1)
-                        ),
-                        "Emb. Dimension": metadata.get("model_embed_dim", None),
-                        "Modality": modality_label,
-                        "Layer": layer,
-                        "Score": -1,
-                    }
-                )
-    # Calculate average metric
-    for model, layers in aggregate_metrics.items():
-        for layer, categories in layers.items():
-            for category, metrics in categories.items():
-                count = metrics["count"]
-                total = metrics["total"]
-                metadata = metrics["metadata"]
-                modality = metadata.get("task_modality", None)
-                modality_label = "unknown"
-                if modality is "dna":
-                    modality_label = "NA"
-                elif modality is "protein":
-                    modality_label = "AA"
-                else:
-                    raise ValueError(f"Unknown modality: {modality}")
-                data_rows.append(
-                    {
-                        "Task Name": "Overall",
-                        "Task Category": category,
-                        "Model": model,
-                        "Num. Parameters (millions)": format_num_params(
-                            metadata.get("model_num_params", -1)
-                        ),
-                        "Emb. Dimension": metadata.get("model_embed_dim", None),
-                        "Modality": modality_label,
-                        "Layer": layer,
-                        "Average": total / count,
-                    }
-                )
-
+    print(all_models.keys())
+    for model_name, model in all_models.items():
+        results_for_model = [
+            res for res in model_results if res.model.hf_name == model_name
+        ]
+        assert len(results_for_model) > 0, f"No results found for model {model_name}"
+        dgeb_score_record = task_results_to_dgeb_score(model, results_for_model)
+        print(f'model {model.hf_name} dgeb score: {dgeb_score_record["Score"]}')
+        data_rows.append(dgeb_score_record)
     print("Finished processing all results")
     df = pd.DataFrame(data_rows)
     return df
@@ -245,6 +196,8 @@ with gr.Blocks() as demo:
             label="Models", placeholder=" 🔍 Search for a model and press enter..."
         )
     unique_categories = df["Task Category"].unique()
+    # sort "DGEB" to the start
+    unique_categories = sorted(unique_categories, key=lambda x: x != "DGEB")
     for category in unique_categories:
         with gr.Tab(label=category):
             unique_tasks_in_category = df[df["Task Category"] == category][

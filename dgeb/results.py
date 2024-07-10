@@ -45,11 +45,9 @@ class GEBModel(BaseModel):
     num_layers: int
     num_params: int
     embed_dim: int
-    # layers: List[Union[Literal["first"], Literal["mid"], Literal["last"], int]]
 
 
 class TaskResults(BaseModel):
-    # dgeb_version: str = version("dgeb")
     task: Task
     model: GEBModel
     results: List[LayerResult]
