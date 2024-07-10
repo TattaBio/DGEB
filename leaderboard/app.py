@@ -224,6 +224,32 @@ with gr.Blocks() as demo:
                     )  # drop all NaN columns for Overall tab
                     # round all values to 4 decimal places
                     rounded_df = filtered_df.round(SIG_FIGS)
+
+                    # calculate ranking column
+                    # if in Overview tab, rank by average metric value
+                    if task == "Overall":
+                        # rank by average col
+                        rounded_df["Rank"] = filtered_df["Average"].rank(
+                            ascending=False
+                        )
+                    else:
+                        avoid_cols = [
+                            "Model",
+                            "Emb. Dimension",
+                            "Modality",
+                            "Layer",
+                        ]
+                        rounded_df["Rank"] = (
+                            rounded_df.drop(columns=avoid_cols, errors="ignore")
+                            .sum(axis=1)
+                            .rank(ascending=False)
+                        )
+                    # make Rank first column
+                    cols = list(rounded_df.columns)
+                    cols.insert(0, cols.pop(cols.index("Rank")))
+                    rounded_df = rounded_df[cols]
+                    # sort by rank
+                    rounded_df = rounded_df.sort_values("Rank")
                     data_frame = gr.DataFrame(rounded_df)
                     model_search.change(
                         update_df, inputs=[model_search], outputs=data_frame
