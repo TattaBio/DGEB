@@ -19,7 +19,7 @@
     <p>
         <a href="#installation">Installation</a> |
         <a href="#usage">Usage</a> |
-        <a href="https://huggingface.co/spaces/dgeb">Leaderboard</a> |
+        <a href="https://huggingface.co/spaces/tattabio/DGEB">Leaderboard</a> |
         <a href="#citing">Citing</a>
     <p>
 </h4>
@@ -141,10 +141,7 @@ evaluation.run(model)
 
 ## Leaderboard
 
-TODO(nishant):
-
-- Add link to leaderboard
-- Instruction for uploading results
+TODO
 
 ## Acknowledgements
 
@@ -152,6 +149,6 @@ DGEB follows the design of text embedding bechmark [MTEB](https://github.com/emb
 
 ## Citing
 
-DGEB was introduced in "[DGEB: Diverse Genomic Embedding Benchmark]()", feel free to cite:
+DGEB was introduced in "[Diverse Genomic Embedding Benchmark for Functional Evaluation Across the Tree of Life]()", feel free to cite:
 
-TODO(andre): bibtex
+TODO
