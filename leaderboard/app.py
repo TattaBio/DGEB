@@ -23,6 +23,20 @@ TaskResults = results.TaskResults
 # Assuming the class definitions provided above are complete and imported here
 
 
+def format_num_params(param: int) -> str:
+    # if the number of parameters is greater than 1 billion, display billion
+    billion = 1_000_000_000
+    million = 1_000_000
+    # if param >= billion:
+    #     num_billions = int(param / 1_000_000_000)
+    #     return f"{num_billions:}B"
+    if param >= million:
+        num_millions = int(param / 1_000_000)
+        return f"{num_millions:}M"
+    else:
+        return f"{param:,}"
+
+
 def load_json_files_from_directory(directory_path: Path) -> List[dict]:
     """
     Recursively load all JSON files within the specified directory path.
@@ -106,7 +120,9 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         "Task Name": task.display_name,
                         "Task Category": task.type,
                         "Model": model.hf_name,
-                        "Num. Parameters": model.num_params,
+                        "Num. Parameters (millions)": format_num_params(
+                            model.num_params
+                        ),
                         "Emb. Dimension": model.embed_dim,
                         "Modality": task.modality,
                         "Layer": layer.layer_display_name,
@@ -120,7 +136,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                     aggregate_metrics[model.hf_name][layer.layer_display_name][
                         task.type
                     ]["total"] += metric.value
-                    # We need these to display Num. Parameters and Emb. Dimension in the final DataFrame
+                    # We need these to display Num. Parameters (millions) and Emb. Dimension in the final DataFrame
                     if (
                         aggregate_metrics[model.hf_name][layer.layer_display_name][
                             task.type
@@ -156,7 +172,9 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         "Task Name": "Overall",
                         "Task Category": category,
                         "Model": model,
-                        "Num. Parameters": metadata.get("model_num_params", None),
+                        "Num. Parameters (millions)": format_num_params(
+                            metadata.get("model_num_params", -1)
+                        ),
                         "Emb. Dimension": metadata.get("model_embed_dim", None),
                         "Modality": modality_label,
                         "Layer": layer,
@@ -236,6 +254,7 @@ with gr.Blocks() as demo:
                         avoid_cols = [
                             "Model",
                             "Emb. Dimension",
+                            "Num. Parameters (millions)",
                             "Modality",
                             "Layer",
                         ]
