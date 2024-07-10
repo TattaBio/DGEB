@@ -25,8 +25,8 @@ TaskResults = results.TaskResults
 
 def format_num_params(param: int) -> str:
     # if the number of parameters is greater than 1 billion, display billion
-    billion = 1_000_000_000
     million = 1_000_000
+    # billion = 1_000_000_000
     # if param >= billion:
     #     num_billions = int(param / 1_000_000_000)
     #     return f"{num_billions:}B"
@@ -151,7 +151,33 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                             "model_embed_dim": model.embed_dim,
                             "task_modality": task.modality,
                         }
-
+    # Add a DGEB task for each model, layer
+    for model, layers in aggregate_metrics.items():
+        for layer, categories in layers.items():
+            for category, metrics in categories.items():
+                metadata = metrics["metadata"]
+                modality = metadata.get("task_modality", None)
+                modality_label = "unknown"
+                if modality is "dna":
+                    modality_label = "NA"
+                elif modality is "protein":
+                    modality_label = "AA"
+                else:
+                    raise ValueError(f"Unknown modality: {modality}")
+                data_rows.append(
+                    {
+                        "Task Name": "Aggregate DGEB Score",
+                        "Task Category": "DGEB",
+                        "Model": model,
+                        "Num. Parameters (millions)": format_num_params(
+                            metadata.get("model_num_params", -1)
+                        ),
+                        "Emb. Dimension": metadata.get("model_embed_dim", None),
+                        "Modality": modality_label,
+                        "Layer": layer,
+                        "Score": -1,
+                    }
+                )
     # Calculate average metric
     for model, layers in aggregate_metrics.items():
         for layer, categories in layers.items():
