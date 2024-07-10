@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/e_coli_rnas",
-        "revision": "main"
+        "revision": "4c134bb4bdb2b0ef1d59fe10797efdfeaf318de6"
       }
     ],
     "primary_metric_id": "v_measure"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 12,
     "num_params": 55904972,
-    "emb_dim": 0
+    "embed_dim": 512
   },
   "results": [
     {

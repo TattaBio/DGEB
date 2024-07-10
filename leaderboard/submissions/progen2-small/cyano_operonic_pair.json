@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/cyano_operonic_pair",
-        "revision": "main"
+        "revision": "eeb4cb71ec2a4ff688af9de7c0662123577d32ec"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 12,
     "num_params": 151148576,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -161,7 +161,7 @@
           "id": "dot_accuracy_threshold",
           "display_name": "dot_accuracy_threshold",
           "description": null,
-          "value": 76.20919036865234
+          "value": 76.20918273925781
         },
         {
           "id": "dot_f1",
@@ -173,7 +173,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 10.069952964782715
+          "value": 10.069953918457031
         },
         {
           "id": "dot_precision",

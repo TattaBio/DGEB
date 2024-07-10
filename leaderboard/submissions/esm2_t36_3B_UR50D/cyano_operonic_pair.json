@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/cyano_operonic_pair",
-        "revision": "main"
+        "revision": "eeb4cb71ec2a4ff688af9de7c0662123577d32ec"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 36,
     "num_params": 2841627041,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -77,7 +77,7 @@
           "id": "manhattan_accuracy_threshold",
           "display_name": "manhattan_accuracy_threshold",
           "description": null,
-          "value": 4447.7734375
+          "value": 4447.77392578125
         },
         {
           "id": "manhattan_f1",
@@ -119,7 +119,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 111.42532348632812
+          "value": 111.42530822753906
         },
         {
           "id": "euclidean_f1",
@@ -149,7 +149,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.3371277774363578
+          "value": 0.3371280175314328
         },
         {
           "id": "dot_accuracy",
@@ -173,7 +173,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 434046.1875
+          "value": 434046.21875
         },
         {
           "id": "dot_precision",
@@ -245,7 +245,7 @@
           "id": "cos_sim_ap",
           "display_name": "cos_sim_ap",
           "description": null,
-          "value": 0.3485867016913942
+          "value": 0.34858593267642246
         },
         {
           "id": "manhattan_accuracy",
@@ -341,7 +341,7 @@
           "id": "dot_accuracy_threshold",
           "display_name": "dot_accuracy_threshold",
           "description": null,
-          "value": 2331774.25
+          "value": 2331774.5
         },
         {
           "id": "dot_f1",
@@ -371,7 +371,7 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.2520002126766312
+          "value": 0.25200076084231776
         },
         {
           "id": "top_ap",
@@ -381,6 +381,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_retrieval",
-        "revision": "main"
+        "revision": "a19124322604a21b26b1b3c13a1bd0b8a63c9f7b"
       },
       {
         "path": "tattabio/arch_retrieval_qrels",
-        "revision": "main"
+        "revision": "3f142f2f9a0995d56c6e77188c7251761450afcf"
       }
     ],
     "primary_metric_id": "map_at_5"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 32,
     "num_params": 2779356160,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -159,19 +159,19 @@
           "id": "nauc_ndcg_at_50_max",
           "display_name": "nauc_ndcg_at_50_max",
           "description": null,
-          "value": 0.40275254695997453
+          "value": 0.4027550261519307
         },
         {
           "id": "nauc_ndcg_at_50_std",
           "display_name": "nauc_ndcg_at_50_std",
           "description": null,
-          "value": 0.6298461952913413
+          "value": 0.6298449675763194
         },
         {
           "id": "nauc_ndcg_at_50_diff1",
           "display_name": "nauc_ndcg_at_50_diff1",
           "description": null,
-          "value": -0.03440097764742866
+          "value": -0.03440308913177297
         },
         {
           "id": "nauc_map_at_5_max",
@@ -213,19 +213,19 @@
           "id": "nauc_map_at_50_max",
           "display_name": "nauc_map_at_50_max",
           "description": null,
-          "value": 0.380091787008538
+          "value": 0.3800933497303014
         },
         {
           "id": "nauc_map_at_50_std",
           "display_name": "nauc_map_at_50_std",
           "description": null,
-          "value": 0.6976430931665609
+          "value": 0.6976421952392109
         },
         {
           "id": "nauc_map_at_50_diff1",
           "display_name": "nauc_map_at_50_diff1",
           "description": null,
-          "value": 0.01577018821473553
+          "value": 0.01576884330549023
         },
         {
           "id": "nauc_recall_at_5_max",
@@ -525,19 +525,19 @@
           "id": "nauc_ndcg_at_50_max",
           "display_name": "nauc_ndcg_at_50_max",
           "description": null,
-          "value": 0.25937401962180817
+          "value": 0.2593741165269576
         },
         {
           "id": "nauc_ndcg_at_50_std",
           "display_name": "nauc_ndcg_at_50_std",
           "description": null,
-          "value": 0.6435029003653076
+          "value": 0.6435030914254599
         },
         {
           "id": "nauc_ndcg_at_50_diff1",
           "display_name": "nauc_ndcg_at_50_diff1",
           "description": null,
-          "value": 0.1596510711041983
+          "value": 0.15965132348455088
         },
         {
           "id": "nauc_map_at_5_max",
@@ -561,7 +561,7 @@
           "id": "nauc_map_at_10_max",
           "display_name": "nauc_map_at_10_max",
           "description": null,
-          "value": 0.13890220773201378
+          "value": 0.13890220773201395
         },
         {
           "id": "nauc_map_at_10_std",
@@ -579,19 +579,19 @@
           "id": "nauc_map_at_50_max",
           "display_name": "nauc_map_at_50_max",
           "description": null,
-          "value": 0.23590184192338215
+          "value": 0.23590185458461196
         },
         {
           "id": "nauc_map_at_50_std",
           "display_name": "nauc_map_at_50_std",
           "description": null,
-          "value": 0.6505387988844773
+          "value": 0.6505388159079657
         },
         {
           "id": "nauc_map_at_50_diff1",
           "display_name": "nauc_map_at_50_diff1",
           "description": null,
-          "value": 0.16461350708860653
+          "value": 0.16461355770456945
         },
         {
           "id": "nauc_recall_at_5_max",

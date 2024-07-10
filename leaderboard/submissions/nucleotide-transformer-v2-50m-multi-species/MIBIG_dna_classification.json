@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/mibig_classification_dna",
-        "revision": "main"
+        "revision": "b5ca7a76d469e4e66c46f1b655903972571e6b61"
       }
     ],
     "primary_metric_id": "f1"

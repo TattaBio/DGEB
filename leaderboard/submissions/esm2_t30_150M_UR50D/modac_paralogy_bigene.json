@@ -8,17 +8,16 @@
     "datasets": [
       {
         "path": "tattabio/modac_paralogy_bigene",
-        "revision": "main"
+        "revision": "241ca6397856e3360da04422d54933035b1fab87"
       }
     ],
-    "primary_metric_id": "recall_at_5"
+    "primary_metric_id": "recall_at_50"
   },
   "model": {
     "hf_name": "facebook/esm2_t30_150M_UR50D",
-    "revision": "...",
     "num_layers": 30,
     "num_params": 148795481,
-    "emb_dim": 0
+    "embed_dim": 640
   },
   "results": [
     {
@@ -50,10 +49,10 @@
           "value": 0.0006702412868632708
         },
         {
-          "id": "recall_at_5",
-          "display_name": "recall_at_5",
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
           "description": null,
-          "value": 0.004021447721179625
+          "value": 0.040214477211796246
         }
       ]
     },
@@ -86,10 +85,10 @@
           "value": 0.0006702412868632708
         },
         {
-          "id": "recall_at_5",
-          "display_name": "recall_at_5",
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
           "description": null,
-          "value": 0.00938337801608579
+          "value": 0.14544235924932977
         }
       ]
     }

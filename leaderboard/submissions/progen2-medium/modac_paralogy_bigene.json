@@ -8,17 +8,16 @@
     "datasets": [
       {
         "path": "tattabio/modac_paralogy_bigene",
-        "revision": "main"
+        "revision": "241ca6397856e3360da04422d54933035b1fab87"
       }
     ],
-    "primary_metric_id": "f1"
+    "primary_metric_id": "recall_at_50"
   },
   "model": {
     "hf_name": "hugohrban/progen2-medium",
-    "revision": "...",
     "num_layers": 27,
     "num_params": 764803616,
-    "emb_dim": 0
+    "embed_dim": 1536
   },
   "results": [
     {
@@ -48,6 +47,12 @@
           "display_name": "accuracy",
           "description": null,
           "value": 0.0006702412868632708
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.04691689008042895
         }
       ]
     },
@@ -78,6 +83,12 @@
           "display_name": "accuracy",
           "description": null,
           "value": 0.006032171581769437
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.3652815013404826
         }
       ]
     }

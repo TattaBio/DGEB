@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/vibrio_operonic_pair",
-        "revision": "main"
+        "revision": "24781b12b45bf81a079a6164ef0d2124948c1878"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 33,
     "num_params": 652353941,
-    "emb_dim": 0
+    "embed_dim": 1280
   },
   "results": [
     {
@@ -119,7 +119,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 61.028228759765625
+          "value": 61.02823257446289
         },
         {
           "id": "euclidean_f1",
@@ -173,7 +173,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 44785.08984375
+          "value": 44785.0859375
         },
         {
           "id": "dot_precision",
@@ -191,13 +191,13 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.44068921651815035
+          "value": 0.44069080050077336
         },
         {
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.44068921651815035
+          "value": 0.44069080050077336
         }
       ]
     },
@@ -381,6 +381,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

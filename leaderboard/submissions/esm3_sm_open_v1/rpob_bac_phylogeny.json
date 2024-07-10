@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/rpob_bac_phylogeny_sequences",
-        "revision": "main"
+        "revision": "b833ef8d8d873ea5387540562873f41d073d3e03"
       },
       {
         "path": "tattabio/rpob_bac_phylogeny_distances",
-        "revision": "main"
+        "revision": "0594e1501ac9fd0e3de49257b8ec318c2a0ea6f7"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -39,19 +39,19 @@
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.14923045808816449
+          "value": 0.14923045808816454
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.09609269155388363
+          "value": 0.09609269155388361
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.14923045808816449
+          "value": 0.14923045808816454
         }
       ]
     },
@@ -63,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.03425069149433317
+          "value": 0.034250691494333164
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.21028136506644282
+          "value": 0.2102813650664429
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.1754661678964713
+          "value": 0.17546616789647132
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.21028136506644282
+          "value": 0.2102813650664429
         }
       ]
     }

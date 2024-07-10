@@ -1,18 +1,18 @@
 {
   "task": {
     "id": "rpob_bac_phylogeny",
-    "display_name": "RpoB Phylogeny",
-    "description": "Evaluate on RpoB phylogeny distance correlation task.",
+    "display_name": "RpoB Bacterial Phylogeny",
+    "description": "Evaluate on RpoB phylogeny distance correlation task for Bacterial sequences.",
     "modality": "protein",
     "type": "eds",
     "datasets": [
       {
         "path": "tattabio/rpob_bac_phylogeny_sequences",
-        "revision": "main"
+        "revision": "b833ef8d8d873ea5387540562873f41d073d3e03"
       },
       {
         "path": "tattabio/rpob_bac_phylogeny_distances",
-        "revision": "main"
+        "revision": "0594e1501ac9fd0e3de49257b8ec318c2a0ea6f7"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 36,
     "num_params": 2841627041,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -33,25 +33,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.06958717030004788
+          "value": 0.06958717767819357
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.1566146957987192
+          "value": 0.1566146955803603
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.19202285816182602
+          "value": 0.19202284530665048
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.19202285816182602
+          "value": 0.19202284530665048
         }
       ]
     },
@@ -63,28 +63,27 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.19060674398561686
+          "value": 0.19060675364434318
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.2557772481166873
+          "value": 0.25577724644638433
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.25874618135872907
+          "value": 0.2587461756509838
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.25874618135872907
+          "value": 0.2587461756509838
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/mibig_classification_dna",
-        "revision": "main"
+        "revision": "b5ca7a76d469e4e66c46f1b655903972571e6b61"
       }
     ],
     "primary_metric_id": "f1"
@@ -29,31 +29,31 @@
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.42556033480120453
+          "value": 0.42643961044280726
         },
         {
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.3877551020408163
+          "value": 0.3854875283446712
         },
         {
           "id": "precision",
           "display_name": "precision",
           "description": null,
-          "value": 0.5480530601164461
+          "value": 0.5505888358897618
         },
         {
           "id": "recall",
           "display_name": "recall",
           "description": null,
-          "value": 0.38118049656864733
+          "value": 0.383668058757702
         },
         {
           "id": "lrap",
           "display_name": "lrap",
           "description": null,
-          "value": 0.5797430083144354
+          "value": 0.5793650793650779
         }
       ]
     },
@@ -65,31 +65,31 @@
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.4114379555836707
+          "value": 0.40603817804559855
         },
         {
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.3900226757369615
+          "value": 0.3877551020408163
         },
         {
           "id": "precision",
           "display_name": "precision",
           "description": null,
-          "value": 0.5259671718047797
+          "value": 0.5201002548153315
         },
         {
           "id": "recall",
           "display_name": "recall",
           "description": null,
-          "value": 0.37300143887445586
+          "value": 0.3692051425781597
         },
         {
           "id": "lrap",
           "display_name": "lrap",
           "description": null,
-          "value": 0.5816326530612234
+          "value": 0.5804988662131507
         }
       ]
     }

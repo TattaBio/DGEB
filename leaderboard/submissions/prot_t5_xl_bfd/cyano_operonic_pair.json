@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/cyano_operonic_pair",
-        "revision": "main"
+        "revision": "eeb4cb71ec2a4ff688af9de7c0662123577d32ec"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 24,
     "num_params": 1208141824,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -47,7 +47,7 @@
           "id": "cos_sim_f1_threshold",
           "display_name": "cos_sim_f1_threshold",
           "description": null,
-          "value": 0.897816002368927
+          "value": 0.8978159427642822
         },
         {
           "id": "cos_sim_precision",
@@ -119,7 +119,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 126.05879974365234
+          "value": 126.05880737304688
         },
         {
           "id": "euclidean_f1",
@@ -173,7 +173,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 190484.515625
+          "value": 190484.53125
         },
         {
           "id": "dot_precision",
@@ -269,7 +269,7 @@
           "id": "manhattan_f1_threshold",
           "display_name": "manhattan_f1_threshold",
           "description": null,
-          "value": 15072.43359375
+          "value": 15072.4345703125
         },
         {
           "id": "manhattan_precision",
@@ -371,7 +371,7 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.3594053486945907
+          "value": 0.3594057338410264
         },
         {
           "id": "top_ap",

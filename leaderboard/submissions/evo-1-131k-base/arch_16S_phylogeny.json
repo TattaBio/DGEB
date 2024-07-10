@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_16S_sequences",
-        "revision": "main"
+        "revision": "e0f0b5d5bd4b08a329b08c2bf4cc800781dff7f0"
       },
       {
         "path": "tattabio/arch_16S_distances",
-        "revision": "main"
+        "revision": "b0356b632a954be70cefd57e3a02e7e1ccd34408"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -26,6 +26,36 @@
   },
   "results": [
     {
+      "layer_number": 16,
+      "layer_display_name": "16",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": -0.025266077406048616
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.004690157120927916
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.004253147697855626
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.004690157120927916
+        }
+      ]
+    },
+    {
       "layer_number": 31,
       "layer_display_name": "31",
       "metrics": [
@@ -33,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": -0.015529088587720449
+          "value": -0.015580669639663534
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.018854726056222234
+          "value": 0.0188972060041519
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.018417769628879477
+          "value": 0.018436446052964364
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.018854726056222234
+          "value": 0.0188972060041519
         }
       ]
     }

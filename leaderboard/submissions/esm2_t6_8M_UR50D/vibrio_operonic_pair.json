@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/vibrio_operonic_pair",
-        "revision": "main"
+        "revision": "24781b12b45bf81a079a6164ef0d2124948c1878"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 6,
     "num_params": 7840121,
-    "emb_dim": 0
+    "embed_dim": 320
   },
   "results": [
     {
@@ -89,7 +89,7 @@
           "id": "manhattan_f1_threshold",
           "display_name": "manhattan_f1_threshold",
           "description": null,
-          "value": 108.27508544921875
+          "value": 108.27510070800781
         },
         {
           "id": "manhattan_precision",
@@ -119,7 +119,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 1.9865587949752808
+          "value": 1.9865591526031494
         },
         {
           "id": "euclidean_f1",
@@ -257,7 +257,7 @@
           "id": "manhattan_accuracy_threshold",
           "display_name": "manhattan_accuracy_threshold",
           "description": null,
-          "value": 87.79132843017578
+          "value": 87.79132080078125
         },
         {
           "id": "manhattan_f1",
@@ -269,7 +269,7 @@
           "id": "manhattan_f1_threshold",
           "display_name": "manhattan_f1_threshold",
           "description": null,
-          "value": 424.6683044433594
+          "value": 424.6683349609375
         },
         {
           "id": "manhattan_precision",
@@ -329,7 +329,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.4486400667318878
+          "value": 0.44864006673188783
         },
         {
           "id": "dot_accuracy",
@@ -381,6 +381,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

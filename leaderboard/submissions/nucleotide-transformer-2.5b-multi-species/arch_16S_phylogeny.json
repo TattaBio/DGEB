@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_16S_sequences",
-        "revision": "main"
+        "revision": "e0f0b5d5bd4b08a329b08c2bf4cc800781dff7f0"
       },
       {
         "path": "tattabio/arch_16S_distances",
-        "revision": "main"
+        "revision": "b0356b632a954be70cefd57e3a02e7e1ccd34408"
       }
     ],
     "primary_metric_id": "top_corr"

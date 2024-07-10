@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/vibrio_operonic_pair",
-        "revision": "main"
+        "revision": "24781b12b45bf81a079a6164ef0d2124948c1878"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 27,
     "num_params": 764803616,
-    "emb_dim": 0
+    "embed_dim": 1536
   },
   "results": [
     {
@@ -77,7 +77,7 @@
           "id": "manhattan_accuracy_threshold",
           "display_name": "manhattan_accuracy_threshold",
           "description": null,
-          "value": 244.42288208007812
+          "value": 244.42291259765625
         },
         {
           "id": "manhattan_f1",
@@ -311,7 +311,7 @@
           "id": "euclidean_f1_threshold",
           "display_name": "euclidean_f1_threshold",
           "description": null,
-          "value": 28.243600845336914
+          "value": 28.243602752685547
         },
         {
           "id": "euclidean_precision",

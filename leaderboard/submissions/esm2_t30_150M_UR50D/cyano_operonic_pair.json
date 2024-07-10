@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/cyano_operonic_pair",
-        "revision": "main"
+        "revision": "eeb4cb71ec2a4ff688af9de7c0662123577d32ec"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 30,
     "num_params": 148795481,
-    "emb_dim": 0
+    "embed_dim": 640
   },
   "results": [
     {

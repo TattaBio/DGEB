@@ -2,13 +2,13 @@
   "task": {
     "id": "convergent_enzymes_classification",
     "display_name": "Convergent Enzymes Classification",
-    "description": "Evaluate on convergent enzymes classification task.",
+    "description": "Evaluate on convergent enzymes classification task, where convergent enzymes are proteins with the same EC number but without blastp hits against each other",
     "modality": "protein",
     "type": "classification",
     "datasets": [
       {
         "path": "tattabio/convergent_enzymes",
-        "revision": "main"
+        "revision": "37f75609f54de2bc0911ccb72faf1c2f5a4285aa"
       }
     ],
     "primary_metric_id": "f1"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 24,
     "num_params": 1208141824,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -29,13 +29,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.3
+          "value": 0.2975
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.24830357142857143
+          "value": 0.24263690476190475
         }
       ]
     },
@@ -47,16 +47,15 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.205
+          "value": 0.2075
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.15984523809523807
+          "value": 0.162297619047619
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

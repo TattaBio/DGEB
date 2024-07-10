@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/fefe_phylogeny_sequences",
-        "revision": "main"
+        "revision": "bce06d79d9ce58413e7bcbed6943905d1afb8b26"
       },
       {
         "path": "tattabio/fefe_phylogeny_distances",
-        "revision": "main"
+        "revision": "d6357cee9b4071a8dcdeef54083006f0d5e94fd2"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 6,
     "num_params": 7840121,
-    "emb_dim": 0
+    "embed_dim": 320
   },
   "results": [
     {
@@ -85,6 +85,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

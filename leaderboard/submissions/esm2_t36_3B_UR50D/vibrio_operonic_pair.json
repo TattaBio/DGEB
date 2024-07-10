@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/vibrio_operonic_pair",
-        "revision": "main"
+        "revision": "24781b12b45bf81a079a6164ef0d2124948c1878"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 36,
     "num_params": 2841627041,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -131,7 +131,7 @@
           "id": "euclidean_f1_threshold",
           "display_name": "euclidean_f1_threshold",
           "description": null,
-          "value": 228.46900939941406
+          "value": 228.46902465820312
         },
         {
           "id": "euclidean_precision",
@@ -149,7 +149,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.4280067475709063
+          "value": 0.4280072686520109
         },
         {
           "id": "dot_accuracy",
@@ -173,7 +173,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 464319.03125
+          "value": 464319.0625
         },
         {
           "id": "dot_precision",
@@ -245,7 +245,7 @@
           "id": "cos_sim_ap",
           "display_name": "cos_sim_ap",
           "description": null,
-          "value": 0.4458584828817936
+          "value": 0.44585848288179364
         },
         {
           "id": "manhattan_accuracy",
@@ -257,7 +257,7 @@
           "id": "manhattan_accuracy_threshold",
           "display_name": "manhattan_accuracy_threshold",
           "description": null,
-          "value": 10474.7978515625
+          "value": 10474.798828125
         },
         {
           "id": "manhattan_f1",
@@ -287,7 +287,7 @@
           "id": "manhattan_ap",
           "display_name": "manhattan_ap",
           "description": null,
-          "value": 0.4346085447028619
+          "value": 0.43460961961390276
         },
         {
           "id": "euclidean_accuracy",
@@ -299,7 +299,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 269.1448669433594
+          "value": 269.1448974609375
         },
         {
           "id": "euclidean_f1",
@@ -353,7 +353,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 976602.625
+          "value": 976602.5625
         },
         {
           "id": "dot_precision",
@@ -371,16 +371,15 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.32327094230303566
+          "value": 0.3232698755870762
         },
         {
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.4458584828817936
+          "value": 0.44585848288179364
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/mopb_clustering",
-        "revision": "main"
+        "revision": "eed4bfff9c5bd2dc2500c50757bfcb90425d999a"
       }
     ],
     "primary_metric_id": "v_measure"

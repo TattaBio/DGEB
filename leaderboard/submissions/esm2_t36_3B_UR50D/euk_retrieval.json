@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/euk_retrieval",
-        "revision": "main"
+        "revision": "c93dc56665cedd19fbeaea9ace146f2474c895f0"
       },
       {
         "path": "tattabio/euk_retrieval_qrels",
-        "revision": "main"
+        "revision": "a5aa01e9b9738074aba57fc07434e352c4c71e4b"
       }
     ],
     "primary_metric_id": "map_at_5"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 36,
     "num_params": 2841627041,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -757,6 +757,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

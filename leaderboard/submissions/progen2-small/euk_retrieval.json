@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/euk_retrieval",
-        "revision": "main"
+        "revision": "c93dc56665cedd19fbeaea9ace146f2474c895f0"
       },
       {
         "path": "tattabio/euk_retrieval_qrels",
-        "revision": "main"
+        "revision": "a5aa01e9b9738074aba57fc07434e352c4c71e4b"
       }
     ],
     "primary_metric_id": "map_at_5"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 12,
     "num_params": 151148576,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -159,19 +159,19 @@
           "id": "nauc_ndcg_at_50_max",
           "display_name": "nauc_ndcg_at_50_max",
           "description": null,
-          "value": 0.5933093031080119
+          "value": 0.5933094336884881
         },
         {
           "id": "nauc_ndcg_at_50_std",
           "display_name": "nauc_ndcg_at_50_std",
           "description": null,
-          "value": 0.490295693708348
+          "value": 0.49029547722523154
         },
         {
           "id": "nauc_ndcg_at_50_diff1",
           "display_name": "nauc_ndcg_at_50_diff1",
           "description": null,
-          "value": -0.020711948734037016
+          "value": -0.02071011278307947
         },
         {
           "id": "nauc_map_at_5_max",
@@ -213,19 +213,19 @@
           "id": "nauc_map_at_50_max",
           "display_name": "nauc_map_at_50_max",
           "description": null,
-          "value": 0.5863012005926771
+          "value": 0.5863012284678861
         },
         {
           "id": "nauc_map_at_50_std",
           "display_name": "nauc_map_at_50_std",
           "description": null,
-          "value": 0.5306429734621372
+          "value": 0.5306429524718634
         },
         {
           "id": "nauc_map_at_50_diff1",
           "display_name": "nauc_map_at_50_diff1",
           "description": null,
-          "value": -0.015445282840538678
+          "value": -0.015444799785488983
         },
         {
           "id": "nauc_recall_at_5_max",

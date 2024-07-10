@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ec_classification",
-        "revision": "main"
+        "revision": "ead5570168e6969a5149f6861e8a33d6b5d22498"
       }
     ],
     "primary_metric_id": "f1"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 36,
     "num_params": 2841627041,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -53,10 +53,9 @@
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.6236979166666667
+          "value": 0.6263020833333334
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_retrieval",
-        "revision": "main"
+        "revision": "a19124322604a21b26b1b3c13a1bd0b8a63c9f7b"
       },
       {
         "path": "tattabio/arch_retrieval_qrels",
-        "revision": "main"
+        "revision": "3f142f2f9a0995d56c6e77188c7251761450afcf"
       }
     ],
     "primary_metric_id": "map_at_5"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 27,
     "num_params": 764803616,
-    "emb_dim": 0
+    "embed_dim": 1536
   },
   "results": [
     {

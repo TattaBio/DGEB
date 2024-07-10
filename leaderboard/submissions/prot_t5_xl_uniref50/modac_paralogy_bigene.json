@@ -8,17 +8,16 @@
     "datasets": [
       {
         "path": "tattabio/modac_paralogy_bigene",
-        "revision": "main"
+        "revision": "241ca6397856e3360da04422d54933035b1fab87"
       }
     ],
-    "primary_metric_id": "f1"
+    "primary_metric_id": "recall_at_50"
   },
   "model": {
     "hf_name": "Rostlab/prot_t5_xl_uniref50",
-    "revision": "...",
     "num_layers": 24,
     "num_params": 1208141824,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -48,6 +47,12 @@
           "display_name": "accuracy",
           "description": null,
           "value": 0.0006702412868632708
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.07238605898123325
         }
       ]
     },
@@ -78,9 +83,14 @@
           "display_name": "accuracy",
           "description": null,
           "value": 0.004021447721179625
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.2754691689008043
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

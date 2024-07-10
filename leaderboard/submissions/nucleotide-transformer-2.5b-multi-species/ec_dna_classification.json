@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ec_classification_dna",
-        "revision": "main"
+        "revision": "cd61c74b4930cf9f1963e6d73ff7f14e2c8e74dd"
       }
     ],
     "primary_metric_id": "f1"
@@ -29,13 +29,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.140625
+          "value": 0.1640625
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.11848958333333333
+          "value": 0.13072916666666667
         }
       ]
     },
@@ -47,13 +47,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.0859375
+          "value": 0.125
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.07473958333333333
+          "value": 0.09505208333333333
         }
       ]
     }

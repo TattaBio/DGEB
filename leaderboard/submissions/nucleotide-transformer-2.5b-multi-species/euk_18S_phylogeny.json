@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/euk_18S_sequences",
-        "revision": "main"
+        "revision": "5174cb3b2c5c46b61307fd1c2c08f5c432655196"
       },
       {
         "path": "tattabio/euk_18S_distances",
-        "revision": "main"
+        "revision": "c4cea4fbb1185d08e0e01fd28ffb8b06a25025da"
       }
     ],
     "primary_metric_id": "top_corr"

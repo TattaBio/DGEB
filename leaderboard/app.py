@@ -9,6 +9,8 @@ import pandas as pd
 import importlib.util
 from pydantic import ValidationError, parse_obj_as
 
+SIG_FIGS = 4
+
 # HACK: very hacky way to import from parent directory, while avoiding needing all the deps of the parent package
 results_path = "../dgeb/results.py"
 
@@ -110,6 +112,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         task.type
                     ]["total"] += metric.value
 
+    # Calculate average metric
     for model, layers in aggregate_metrics.items():
         for layer, categories in layers.items():
             for category, metrics in categories.items():
@@ -124,6 +127,8 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         "Average": total / count,
                     }
                 )
+
+    print("Finished processing all results")
     df = pd.DataFrame(data_rows)
     return df
 
@@ -139,6 +144,10 @@ with gr.Blocks() as demo:
             filtered_df = df[df["Model"].str.contains(model_search, case=False)]
         return filtered_df
 
+    # add title DGEB Leaderboard
+    gr.Label("DGEB Leaderboard")
+    # insert image from "asset/DGEB_figure.jpeg"
+    gr.Image("./assets/DGEB_figure.jpg")
     gr.Markdown(
         """
         DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/GEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> 🤗 Refer to the [GEB paper](https://example.com) for details on metrics, tasks, and models.
@@ -171,11 +180,12 @@ with gr.Blocks() as demo:
                     ).dropna(
                         axis=1, how="all"
                     )  # drop all NaN columns for Overall tab
-
-                    data_frame = gr.DataFrame(filtered_df)
+                    # round all values to 4 decimal places
+                    rounded_df = filtered_df.round(SIG_FIGS)
+                    data_frame = gr.DataFrame(rounded_df)
                     model_search.change(
                         update_df, inputs=[model_search], outputs=data_frame
                     )
 
 
-demo.launch(share=True)
+demo.launch()

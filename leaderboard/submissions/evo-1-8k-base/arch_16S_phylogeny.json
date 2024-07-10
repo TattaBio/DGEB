@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_16S_sequences",
-        "revision": "main"
+        "revision": "e0f0b5d5bd4b08a329b08c2bf4cc800781dff7f0"
       },
       {
         "path": "tattabio/arch_16S_distances",
-        "revision": "main"
+        "revision": "b0356b632a954be70cefd57e3a02e7e1ccd34408"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -33,25 +33,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": -0.01018476450572727
+          "value": -0.010027057225064055
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": -0.02239112815544704
+          "value": -0.02215556380490859
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": -0.020269453207716885
+          "value": -0.019732162616989075
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": -0.01018476450572727
+          "value": -0.010027057225064055
         }
       ]
     },
@@ -63,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": -0.00521531604341792
+          "value": -0.005205558296298042
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": -0.01942347345507746
+          "value": -0.019367509701809612
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": -0.015679374971369252
+          "value": -0.015643699787755726
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": -0.00521531604341792
+          "value": -0.005205558296298042
         }
       ]
     }

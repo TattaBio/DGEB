@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/vibrio_operonic_pair",
-        "revision": "main"
+        "revision": "24781b12b45bf81a079a6164ef0d2124948c1878"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 24,
     "num_params": 1208141824,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -161,7 +161,7 @@
           "id": "dot_accuracy_threshold",
           "display_name": "dot_accuracy_threshold",
           "description": null,
-          "value": 836162.4375
+          "value": 836162.375
         },
         {
           "id": "dot_f1",
@@ -191,7 +191,7 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.463510815698362
+          "value": 0.4635132398582616
         },
         {
           "id": "top_ap",
@@ -269,7 +269,7 @@
           "id": "manhattan_f1_threshold",
           "display_name": "manhattan_f1_threshold",
           "description": null,
-          "value": 21019.87890625
+          "value": 21019.880859375
         },
         {
           "id": "manhattan_precision",
@@ -287,7 +287,7 @@
           "id": "manhattan_ap",
           "display_name": "manhattan_ap",
           "description": null,
-          "value": 0.5427027563975391
+          "value": 0.5427024596748751
         },
         {
           "id": "euclidean_accuracy",
@@ -353,7 +353,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 9928614.0
+          "value": 9928615.0
         },
         {
           "id": "dot_precision",
@@ -377,10 +377,9 @@
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.5427027563975391
+          "value": 0.5427024596748751
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

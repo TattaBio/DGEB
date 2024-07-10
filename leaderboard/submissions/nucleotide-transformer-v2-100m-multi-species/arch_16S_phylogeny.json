@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_16S_sequences",
-        "revision": "main"
+        "revision": "e0f0b5d5bd4b08a329b08c2bf4cc800781dff7f0"
       },
       {
         "path": "tattabio/arch_16S_distances",
-        "revision": "main"
+        "revision": "b0356b632a954be70cefd57e3a02e7e1ccd34408"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -33,25 +33,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": -0.018730477180916045
+          "value": -0.01873048882073702
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.02807201606698021
+          "value": 0.028071992556529406
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.027834429819127992
+          "value": 0.0278344032639243
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.02807201606698021
+          "value": 0.028071992556529406
         }
       ]
     },
@@ -63,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": -0.035107671690653736
+          "value": -0.035107630996407665
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.01688527006286081
+          "value": 0.016885345022489895
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.012808599408079713
+          "value": 0.012808674577804298
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.01688527006286081
+          "value": 0.016885345022489895
         }
       ]
     }

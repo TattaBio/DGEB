@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/convergent_enzymes",
-        "revision": "main"
+        "revision": "37f75609f54de2bc0911ccb72faf1c2f5a4285aa"
       }
     ],
     "primary_metric_id": "f1"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 24,
     "num_params": 1208141824,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -29,13 +29,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.27
+          "value": 0.275
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.2215595238095238
+          "value": 0.22734523809523807
         }
       ]
     },
@@ -47,13 +47,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.2175
+          "value": 0.2275
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.16741666666666666
+          "value": 0.17930555555555558
         }
       ]
     }

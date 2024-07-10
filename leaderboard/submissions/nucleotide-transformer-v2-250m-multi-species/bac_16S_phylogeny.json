@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/bac_16S_sequences",
-        "revision": "main"
+        "revision": "efde1456b86748909cbcfecb07d783756d570aa3"
       },
       {
         "path": "tattabio/bac_16S_distances",
-        "revision": "main"
+        "revision": "5c8ba5dfa600bb930d34af2fbc2b17f0acab62d3"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -33,25 +33,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.24014165319053082
+          "value": 0.24014165203750024
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.28990471069561435
+          "value": 0.28990471689345415
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.29092164966130907
+          "value": 0.2909216542477827
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.29092164966130907
+          "value": 0.2909216542477827
         }
       ]
     },
@@ -63,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.04086246402379242
+          "value": 0.0408624668440742
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.0972181986607679
+          "value": 0.09721819145306612
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.0946131214029345
+          "value": 0.09461311593137267
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.0972181986607679
+          "value": 0.09721819145306612
         }
       ]
     }

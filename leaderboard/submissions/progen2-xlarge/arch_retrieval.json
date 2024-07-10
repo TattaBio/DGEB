@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/arch_retrieval",
-        "revision": "main"
+        "revision": "a19124322604a21b26b1b3c13a1bd0b8a63c9f7b"
       },
       {
         "path": "tattabio/arch_retrieval_qrels",
-        "revision": "main"
+        "revision": "3f142f2f9a0995d56c6e77188c7251761450afcf"
       }
     ],
     "primary_metric_id": "map_at_5"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 32,
     "num_params": 6443638816,
-    "emb_dim": 0
+    "embed_dim": 4096
   },
   "results": [
     {
@@ -153,7 +153,7 @@
           "id": "nauc_ndcg_at_10_diff1",
           "display_name": "nauc_ndcg_at_10_diff1",
           "description": null,
-          "value": -0.050433839881317825
+          "value": -0.050433839881315716
         },
         {
           "id": "nauc_ndcg_at_50_max",
@@ -555,7 +555,7 @@
           "id": "nauc_map_at_5_diff1",
           "display_name": "nauc_map_at_5_diff1",
           "description": null,
-          "value": 0.2944057124278615
+          "value": 0.29440571242786184
         },
         {
           "id": "nauc_map_at_10_max",
@@ -597,7 +597,7 @@
           "id": "nauc_recall_at_5_max",
           "display_name": "nauc_recall_at_5_max",
           "description": null,
-          "value": 0.13017232999669529
+          "value": 0.13017232999669545
         },
         {
           "id": "nauc_recall_at_5_std",

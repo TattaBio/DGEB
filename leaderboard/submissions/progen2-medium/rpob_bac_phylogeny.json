@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/rpob_bac_phylogeny_sequences",
-        "revision": "main"
+        "revision": "b833ef8d8d873ea5387540562873f41d073d3e03"
       },
       {
         "path": "tattabio/rpob_bac_phylogeny_distances",
-        "revision": "main"
+        "revision": "0594e1501ac9fd0e3de49257b8ec318c2a0ea6f7"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -22,7 +22,7 @@
     "revision": "...",
     "num_layers": 27,
     "num_params": 764803616,
-    "emb_dim": 0
+    "embed_dim": 1536
   },
   "results": [
     {
@@ -33,25 +33,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.1950082246859842
+          "value": 0.1950082250185355
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.2804331523405332
+          "value": 0.28043315277470116
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.30367273251343196
+          "value": 0.30367273332819217
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.30367273251343196
+          "value": 0.30367273332819217
         }
       ]
     },
@@ -63,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.25907183907822773
+          "value": 0.25907183955646845
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.3897653252928928
+          "value": 0.3897653256717273
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.39653707817061645
+          "value": 0.39653707661764
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.39653707817061645
+          "value": 0.39653707661764
         }
       ]
     }

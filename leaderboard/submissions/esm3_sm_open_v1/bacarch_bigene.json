@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/bac_arch_bigene",
-        "revision": "main"
+        "revision": "d5a65e44bae43a9ba9f2fdc03056dff9c12f6631"
       }
     ],
     "primary_metric_id": "f1"

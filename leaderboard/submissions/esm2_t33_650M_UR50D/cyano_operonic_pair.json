@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/cyano_operonic_pair",
-        "revision": "main"
+        "revision": "eeb4cb71ec2a4ff688af9de7c0662123577d32ec"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 33,
     "num_params": 652353941,
-    "emb_dim": 0
+    "embed_dim": 1280
   },
   "results": [
     {
@@ -131,7 +131,7 @@
           "id": "euclidean_f1_threshold",
           "display_name": "euclidean_f1_threshold",
           "description": null,
-          "value": 127.9928970336914
+          "value": 127.99288940429688
         },
         {
           "id": "euclidean_precision",
@@ -299,7 +299,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 89.34696197509766
+          "value": 89.34696960449219
         },
         {
           "id": "euclidean_f1",
@@ -381,6 +381,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

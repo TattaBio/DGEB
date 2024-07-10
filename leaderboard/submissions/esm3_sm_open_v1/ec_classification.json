@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ec_classification",
-        "revision": "main"
+        "revision": "ead5570168e6969a5149f6861e8a33d6b5d22498"
       }
     ],
     "primary_metric_id": "f1"
@@ -47,13 +47,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.6484375
+          "value": 0.640625
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.5890625
+          "value": 0.58125
         }
       ]
     }

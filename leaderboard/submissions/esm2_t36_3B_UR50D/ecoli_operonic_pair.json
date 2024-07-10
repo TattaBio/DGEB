@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ecoli_operonic_pair",
-        "revision": "main"
+        "revision": "a62c01143a842696fc8200b91c1acb825e8cb891"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 36,
     "num_params": 2841627041,
-    "emb_dim": 0
+    "embed_dim": 2560
   },
   "results": [
     {
@@ -107,7 +107,7 @@
           "id": "manhattan_ap",
           "display_name": "manhattan_ap",
           "description": null,
-          "value": 0.502035362838545
+          "value": 0.5020331902964992
         },
         {
           "id": "euclidean_accuracy",
@@ -149,7 +149,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.5261161056597415
+          "value": 0.5261132930952928
         },
         {
           "id": "dot_accuracy",
@@ -173,7 +173,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 433432.21875
+          "value": 433432.1875
         },
         {
           "id": "dot_precision",
@@ -191,7 +191,7 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.5241538573975328
+          "value": 0.5241523190145476
         },
         {
           "id": "top_ap",
@@ -245,7 +245,7 @@
           "id": "cos_sim_ap",
           "display_name": "cos_sim_ap",
           "description": null,
-          "value": 0.5507975673875167
+          "value": 0.5507975673875168
         },
         {
           "id": "manhattan_accuracy",
@@ -257,7 +257,7 @@
           "id": "manhattan_accuracy_threshold",
           "display_name": "manhattan_accuracy_threshold",
           "description": null,
-          "value": 11284.8115234375
+          "value": 11284.8125
         },
         {
           "id": "manhattan_f1",
@@ -287,7 +287,7 @@
           "id": "manhattan_ap",
           "display_name": "manhattan_ap",
           "description": null,
-          "value": 0.5513301023681433
+          "value": 0.5513298747216403
         },
         {
           "id": "euclidean_accuracy",
@@ -299,7 +299,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 286.1108703613281
+          "value": 286.11083984375
         },
         {
           "id": "euclidean_f1",
@@ -311,7 +311,7 @@
           "id": "euclidean_f1_threshold",
           "display_name": "euclidean_f1_threshold",
           "description": null,
-          "value": 419.6392517089844
+          "value": 419.63922119140625
         },
         {
           "id": "euclidean_precision",
@@ -329,7 +329,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.5607115751168346
+          "value": 0.560712040100291
         },
         {
           "id": "dot_accuracy",
@@ -371,16 +371,15 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.34701200067978866
+          "value": 0.3470113984193546
         },
         {
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.5607115751168346
+          "value": 0.560712040100291
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

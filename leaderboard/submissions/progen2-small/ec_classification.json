@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ec_classification",
-        "revision": "main"
+        "revision": "ead5570168e6969a5149f6861e8a33d6b5d22498"
       }
     ],
     "primary_metric_id": "f1"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 12,
     "num_params": 151148576,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -29,13 +29,13 @@
           "id": "accuracy",
           "display_name": "accuracy",
           "description": null,
-          "value": 0.46875
+          "value": 0.4765625
         },
         {
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.40885416666666663
+          "value": 0.41744791666666664
         }
       ]
     },
@@ -53,7 +53,7 @@
           "id": "f1",
           "display_name": "f1",
           "description": null,
-          "value": 0.4341145833333333
+          "value": 0.43671875
         }
       ]
     }

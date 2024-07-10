@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ecoli_operonic_pair",
-        "revision": "main"
+        "revision": "a62c01143a842696fc8200b91c1acb825e8cb891"
       }
     ],
     "primary_metric_id": "top_ap"

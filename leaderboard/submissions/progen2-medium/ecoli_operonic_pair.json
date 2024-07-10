@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ecoli_operonic_pair",
-        "revision": "main"
+        "revision": "a62c01143a842696fc8200b91c1acb825e8cb891"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 27,
     "num_params": 764803616,
-    "emb_dim": 0
+    "embed_dim": 1536
   },
   "results": [
     {
@@ -35,7 +35,7 @@
           "id": "cos_sim_accuracy_threshold",
           "display_name": "cos_sim_accuracy_threshold",
           "description": null,
-          "value": 0.6514897346496582
+          "value": 0.651489794254303
         },
         {
           "id": "cos_sim_f1",
@@ -47,7 +47,7 @@
           "id": "cos_sim_f1_threshold",
           "display_name": "cos_sim_f1_threshold",
           "description": null,
-          "value": 0.3859625458717346
+          "value": 0.38596251606941223
         },
         {
           "id": "cos_sim_precision",
@@ -65,7 +65,7 @@
           "id": "cos_sim_ap",
           "display_name": "cos_sim_ap",
           "description": null,
-          "value": 0.5102343966256977
+          "value": 0.510237868123645
         },
         {
           "id": "manhattan_accuracy",
@@ -149,7 +149,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.5251563271965466
+          "value": 0.5251579034107494
         },
         {
           "id": "dot_accuracy",
@@ -197,7 +197,7 @@
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.5251563271965466
+          "value": 0.5251579034107494
         }
       ]
     },
@@ -245,7 +245,7 @@
           "id": "cos_sim_ap",
           "display_name": "cos_sim_ap",
           "description": null,
-          "value": 0.5195502618029562
+          "value": 0.5195509705220649
         },
         {
           "id": "manhattan_accuracy",
@@ -287,7 +287,7 @@
           "id": "manhattan_ap",
           "display_name": "manhattan_ap",
           "description": null,
-          "value": 0.5921799309983014
+          "value": 0.5921808575876653
         },
         {
           "id": "euclidean_accuracy",
@@ -329,7 +329,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.5869660958384929
+          "value": 0.5869667896425095
         },
         {
           "id": "dot_accuracy",
@@ -371,13 +371,13 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.3891015210394018
+          "value": 0.38910400697637215
         },
         {
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.5921799309983014
+          "value": 0.5921808575876653
         }
       ]
     }

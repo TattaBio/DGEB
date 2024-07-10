@@ -2,13 +2,13 @@
   "task": {
     "id": "MIBIG_protein_classification",
     "display_name": "MIBiG Classification",
-    "description": "Biosynthetic Gene cluster classification using protein sequences.",
+    "description": "Biosynthetic Gene cluster classification using protein sequences on MIBIG dataset.",
     "modality": "protein",
     "type": "classification",
     "datasets": [
       {
         "path": "tattabio/mibig_classification_prot",
-        "revision": "main"
+        "revision": "915a7ff28dc9820e35c4d7fd03d4c8c44a88ff1f"
       }
     ],
     "primary_metric_id": "f1"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 6,
     "num_params": 7840121,
-    "emb_dim": 0
+    "embed_dim": 320
   },
   "results": [
     {
@@ -93,6 +93,5 @@
         }
       ]
     }
-  ],
-  "geb_version": "1.0"
+  ]
 }

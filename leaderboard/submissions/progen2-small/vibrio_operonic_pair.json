@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/vibrio_operonic_pair",
-        "revision": "main"
+        "revision": "24781b12b45bf81a079a6164ef0d2124948c1878"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 12,
     "num_params": 151148576,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -47,7 +47,7 @@
           "id": "cos_sim_f1_threshold",
           "display_name": "cos_sim_f1_threshold",
           "description": null,
-          "value": 0.4063832461833954
+          "value": 0.4063832759857178
         },
         {
           "id": "cos_sim_precision",
@@ -227,7 +227,7 @@
           "id": "cos_sim_f1_threshold",
           "display_name": "cos_sim_f1_threshold",
           "description": null,
-          "value": 0.42483001947402954
+          "value": 0.42482998967170715
         },
         {
           "id": "cos_sim_precision",
@@ -353,7 +353,7 @@
           "id": "dot_f1_threshold",
           "display_name": "dot_f1_threshold",
           "description": null,
-          "value": 29.300809860229492
+          "value": 29.30080795288086
         },
         {
           "id": "dot_precision",

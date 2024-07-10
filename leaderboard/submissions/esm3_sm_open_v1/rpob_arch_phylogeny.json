@@ -8,11 +8,11 @@
     "datasets": [
       {
         "path": "tattabio/rpob_arch_phylogeny_sequences",
-        "revision": "main"
+        "revision": "10de75b9f5ad12340d629fd1ad015ef4319d6ee4"
       },
       {
         "path": "tattabio/rpob_arch_phylogeny_distances",
-        "revision": "main"
+        "revision": "2a585f0e135fe74b8ae6d31e7801c6031b0dcc18"
       }
     ],
     "primary_metric_id": "top_corr"
@@ -33,25 +33,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.2143926122058311
+          "value": 0.21439261220583106
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.24110859242777563
+          "value": 0.24110859242777566
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.08984114827917195
+          "value": 0.08984114827917193
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.24110859242777563
+          "value": 0.24110859242777566
         }
       ]
     },
@@ -63,25 +63,25 @@
           "id": "cos_sim",
           "display_name": "cos_sim",
           "description": null,
-          "value": 0.11813832747662072
+          "value": 0.11813832747662069
         },
         {
           "id": "manhattan",
           "display_name": "manhattan",
           "description": null,
-          "value": 0.1986303950429917
+          "value": 0.19863039504299163
         },
         {
           "id": "euclidean",
           "display_name": "euclidean",
           "description": null,
-          "value": 0.16233060651692188
+          "value": 0.16233060651692185
         },
         {
           "id": "top_corr",
           "display_name": "top_corr",
           "description": null,
-          "value": 0.1986303950429917
+          "value": 0.19863039504299163
         }
       ]
     }

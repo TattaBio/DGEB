@@ -8,7 +8,7 @@
     "datasets": [
       {
         "path": "tattabio/ecoli_operonic_pair",
-        "revision": "main"
+        "revision": "a62c01143a842696fc8200b91c1acb825e8cb891"
       }
     ],
     "primary_metric_id": "top_ap"
@@ -18,7 +18,7 @@
     "revision": "...",
     "num_layers": 12,
     "num_params": 151148576,
-    "emb_dim": 0
+    "embed_dim": 1024
   },
   "results": [
     {
@@ -65,7 +65,7 @@
           "id": "cos_sim_ap",
           "display_name": "cos_sim_ap",
           "description": null,
-          "value": 0.4935023225116965
+          "value": 0.4935020874365037
         },
         {
           "id": "manhattan_accuracy",
@@ -119,7 +119,7 @@
           "id": "euclidean_accuracy_threshold",
           "display_name": "euclidean_accuracy_threshold",
           "description": null,
-          "value": 3.0176095962524414
+          "value": 3.0176098346710205
         },
         {
           "id": "euclidean_f1",
@@ -149,7 +149,7 @@
           "id": "euclidean_ap",
           "display_name": "euclidean_ap",
           "description": null,
-          "value": 0.5146348726504055
+          "value": 0.5146357162147513
         },
         {
           "id": "dot_accuracy",
@@ -191,13 +191,13 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.3884686414501056
+          "value": 0.38847128264957165
         },
         {
           "id": "top_ap",
           "display_name": "top_ap",
           "description": null,
-          "value": 0.5146348726504055
+          "value": 0.5146357162147513
         }
       ]
     },
@@ -341,7 +341,7 @@
           "id": "dot_accuracy_threshold",
           "display_name": "dot_accuracy_threshold",
           "description": null,
-          "value": 1022.4356689453125
+          "value": 1022.4357299804688
         },
         {
           "id": "dot_f1",
@@ -371,7 +371,7 @@
           "id": "dot_ap",
           "display_name": "dot_ap",
           "description": null,
-          "value": 0.3964171112726358
+          "value": 0.39641816140828223
         },
         {
           "id": "top_ap",
