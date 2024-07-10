@@ -68,7 +68,13 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
     # This will be used to calculate the average of each metric for each model, layer, and category
     aggregate_metrics = defaultdict(  # model
         lambda: defaultdict(  # layer
-            lambda: defaultdict(lambda: {"count": 0, "total": 0})  # category
+            lambda: defaultdict(
+                lambda: {
+                    "count": 0,
+                    "total": 0,
+                    "metadata": None,
+                }
+            )
         )
     )
     for res in model_results:
@@ -100,6 +106,9 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         "Task Name": task.display_name,
                         "Task Category": task.type,
                         "Model": model.hf_name,
+                        "Num. Parameters": model.num_params,
+                        "Emb. Dimension": model.embed_dim,
+                        "Modality": task.modality,
                         "Layer": layer.layer_display_name,
                         **dict(zipped),
                     }
@@ -111,6 +120,21 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                     aggregate_metrics[model.hf_name][layer.layer_display_name][
                         task.type
                     ]["total"] += metric.value
+                    # We need these to display Num. Parameters and Emb. Dimension in the final DataFrame
+                    if (
+                        aggregate_metrics[model.hf_name][layer.layer_display_name][
+                            task.type
+                        ].get("metadata", None)
+                        is None
+                    ):
+                        print("No metadata found, setting metadata")
+                        aggregate_metrics[model.hf_name][layer.layer_display_name][
+                            task.type
+                        ]["metadata"] = {
+                            "model_num_params": model.num_params,
+                            "model_embed_dim": model.embed_dim,
+                            "task_modality": task.modality,
+                        }
 
     # Calculate average metric
     for model, layers in aggregate_metrics.items():
@@ -118,11 +142,23 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
             for category, metrics in categories.items():
                 count = metrics["count"]
                 total = metrics["total"]
+                metadata = metrics["metadata"]
+                modality = metadata.get("task_modality", None)
+                modality_label = "unknown"
+                if modality is "dna":
+                    modality_label = "NA"
+                elif modality is "protein":
+                    modality_label = "AA"
+                else:
+                    raise ValueError(f"Unknown modality: {modality}")
                 data_rows.append(
                     {
                         "Task Name": "Overall",
                         "Task Category": category,
                         "Model": model,
+                        "Num. Parameters": metadata.get("model_num_params", None),
+                        "Emb. Dimension": metadata.get("model_embed_dim", None),
+                        "Modality": modality_label,
                         "Layer": layer,
                         "Average": total / count,
                     }
@@ -144,15 +180,21 @@ with gr.Blocks() as demo:
             filtered_df = df[df["Model"].str.contains(model_search, case=False)]
         return filtered_df
 
-    # add title DGEB Leaderboard
-    gr.Label("DGEB Leaderboard")
-    # insert image from "asset/DGEB_figure.jpeg"
-    gr.Image("./assets/DGEB_figure.jpg")
-    gr.Markdown(
-        """
-        DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/GEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> 🤗 Refer to the [GEB paper](https://example.com) for details on metrics, tasks, and models.
-        """
-    )
+    gr.Label("Diverse Genomic Embedding Benchmarks", show_label=False, scale=2)
+    with gr.Row():
+        gr.Image(
+            value="./DGEB_figure.png",
+            format="png",
+            container=True,
+            width="50%",
+            show_download_button=False,
+            show_label=False,
+        )
+        gr.Markdown(
+            """
+            DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/DGEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> Refer to the [DGEB paper](https://example.com) for details on metrics, tasks, and models.
+            """,
+        )
 
     with gr.Row():
         model_search = gr.Textbox(

@@ -15,7 +15,7 @@ RUN /root/.cargo/bin/uv pip install --system --no-cache -r requirements.txt
 
 # copy src
 COPY dgeb dgeb
-COPY leaderboard leaderboard
+COPY leaderboard/ leaderboard/
 
 # Run gradio when the container launches
 EXPOSE 7860

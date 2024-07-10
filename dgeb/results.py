@@ -44,6 +44,7 @@ class GEBModel(BaseModel):
     hf_name: str
     num_layers: int
     num_params: int
+    embed_dim: int
     # layers: List[Union[Literal["first"], Literal["mid"], Literal["last"], int]]
 
 
