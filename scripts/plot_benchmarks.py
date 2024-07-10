@@ -10,8 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-from dgeb.geb import get_all_tasks, get_output_folder, get_tasks_by_name
-from dgeb.tasks.tasks import TaskResult
+from dgeb import TaskResult, get_all_tasks, get_output_folder, get_tasks_by_name
 
 ALL_TASKS = [task.metadata.id for task in get_all_tasks()]
 
@@ -78,7 +77,6 @@ def plot_benchmarks(
             )
             ax[0][i].set_title(task)
             # rotate the x axis labels
-
             for tick in ax[0][i].get_xticklabels():
                 tick.set_rotation(90)
         else:
