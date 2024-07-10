@@ -131,9 +131,21 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
             else:
                 # For each Metric in the Layer
                 # pivoting the data so that each metric is a row
-                metric_ids = [metric.id for metric in layer.metrics]
+                metric_ids = []
+                primary_metric_label = f"{task.primary_metric_id} (primary metric)"
+                for metric in layer.metrics:
+                    if task.primary_metric_id == metric.id:
+                        metric_ids.append(primary_metric_label)
+                    else:
+                        metric_ids.append(metric.id)
+
                 metric_values = [metric.value for metric in layer.metrics]
                 zipped = zip(metric_ids, metric_values)
+                # sort primary metric id first
+                sorted_zip = sorted(
+                    zipped,
+                    key=lambda x: x[0] != primary_metric_label,
+                )
                 data_rows.append(
                     {
                         "Task Name": task.display_name,
@@ -145,7 +157,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         "Emb. Dimension": model.embed_dim,
                         "Modality": task.modality,
                         "Layer": layer.layer_display_name,
-                        **dict(zipped),
+                        **dict(sorted_zip),
                     }
                 )
     print(all_models.keys())
@@ -214,7 +226,9 @@ with gr.Blocks() as demo:
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
+                    ).dropna(
+                        axis=1, how="all"
+                    )  # drop all NaN columns for Overall tab
                     # round all values to 4 decimal places
                     rounded_df = filtered_df.round(SIG_FIGS)
 
