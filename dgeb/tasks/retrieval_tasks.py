@@ -62,7 +62,6 @@ class ArchRetrieval(Task):
             ),
             Dataset(
                 path="tattabio/arch_retrieval_qrels",
-                description="Relevance between query and corpus proteins",
                 revision="3f142f2f9a0995d56c6e77188c7251761450afcf",
             ),
         ],
@@ -87,7 +86,6 @@ class EukRetrieval(Task):
             ),
             Dataset(
                 path="tattabio/euk_retrieval_qrels",
-                description="Relevance between query and corpus proteins",
                 revision="a5aa01e9b9738074aba57fc07434e352c4c71e4b",
             ),
         ],

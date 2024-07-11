@@ -85,7 +85,7 @@ class EnzymeCommissionClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/ec_classification",
-                revision="d83aba56d785df48bd3b4acafc536ff8c03e7d98",
+                revision="ead5570168e6969a5149f6861e8a33d6b5d22498",
             )
         ],
         primary_metric_id="f1",
@@ -105,7 +105,7 @@ class EnzymeCommissionDNAClassification(Task):
         datasets=[
             Dataset(
                 path="tattabio/ec_classification_dna",
-                revision="e78328541bb16e7cda16830d9844c09cbf4e682d",
+                revision="cd61c74b4930cf9f1963e6d73ff7f14e2c8e74dd",
             )
         ],
         primary_metric_id="f1",

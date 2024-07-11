@@ -139,7 +139,6 @@ class BioSeqTransformer(ABC):
     def metadata(self) -> Dict:
         return {
             "hf_name": self.hf_name,
-            "revision": "...",  # TODO: Fix
             "num_layers": self.num_layers,
             "num_params": self.num_param,
             "embed_dim": self.embed_dim,
