@@ -176,15 +176,6 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
 df = task_results_to_df(load_results())
 image_path = "./DGEB_Figure.png"
 with gr.Blocks() as demo:
-
-    def update_df(model_search: str) -> pd.DataFrame:
-        # reset to original df, don't want to filter on filtered df
-        # because once filtered, it will keep getting smaller
-        filtered_df: pd.DataFrame = df.copy()
-        if model_search:
-            filtered_df = df[df["Model"].str.contains(model_search, case=False)]
-        return filtered_df
-
     gr.Label("Diverse Genomic Embedding Benchmarks", show_label=False, scale=2)
     with gr.Row():
         # get full path of the image
@@ -198,10 +189,6 @@ with gr.Blocks() as demo:
             """,
         )
 
-    with gr.Row():
-        model_search = gr.Textbox(
-            label="Models", placeholder=" 🔍 Search for a model and press enter..."
-        )
     unique_categories = df["Task Category"].unique()
     # sort "DGEB" to the start
     unique_categories = sorted(unique_categories, key=lambda x: x != "DGEB")
@@ -256,9 +243,6 @@ with gr.Blocks() as demo:
                     # sort by rank
                     rounded_df = rounded_df.sort_values("Rank")
                     data_frame = gr.DataFrame(rounded_df)
-                    model_search.change(
-                        update_df, inputs=[model_search], outputs=data_frame
-                    )
 
 
 demo.launch(allowed_paths=["."])
