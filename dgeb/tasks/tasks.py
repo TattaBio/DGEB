@@ -107,14 +107,8 @@ class TaskResult(BaseModel):
         layer_results: LayerResult,
         model_metadata: GEBModel,
     ):
-        version_str = "0.0.0"
-        try:
-            version_str = str(version("dgeb"))
-        except PackageNotFoundError:
-            print(f"Failed to grab dgeb version. falling back to {version_str=}")
-
         return TaskResult(
-            dgeb_version=version_str,
+            dgeb_version=version("dgeb"),
             task=task_metadata,
             model=model_metadata,
             results=list(
