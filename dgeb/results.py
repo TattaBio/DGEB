@@ -1,4 +1,4 @@
-from importlib.metadata import version
+# from importlib.metadata import version
 
 from typing import List, Literal, Union, Optional
 from pydantic import BaseModel
@@ -48,6 +48,7 @@ class GEBModel(BaseModel):
 
 
 class TaskResults(BaseModel):
+    # dgeb_version: str = version("dgeb")
     task: Task
     model: GEBModel
     results: List[LayerResult]
