@@ -24,6 +24,7 @@
     "num_params": 498345436,
     "embed_dim": 1024
   },
+  "dgeb_version": "0.0.0",
   "results": [
     {
       "layer_number": 14,

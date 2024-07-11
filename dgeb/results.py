@@ -48,7 +48,7 @@ class GEBModel(BaseModel):
 
 
 class TaskResults(BaseModel):
-    # dgeb_version: str = version("dgeb")
+    dgeb_version: str
     task: Task
     model: GEBModel
     results: List[LayerResult]
