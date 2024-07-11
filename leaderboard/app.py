@@ -160,7 +160,6 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
                         **dict(sorted_zip),
                     }
                 )
-    print(all_models.keys())
     for model_name, model in all_models.items():
         results_for_model = [
             res for res in model_results if res.model.hf_name == model_name
@@ -175,6 +174,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
 
 
 df = task_results_to_df(load_results())
+image_path = "./DGEB_Figure.png"
 with gr.Blocks() as demo:
 
     def update_df(model_search: str) -> pd.DataFrame:
@@ -187,13 +187,10 @@ with gr.Blocks() as demo:
 
     gr.Label("Diverse Genomic Embedding Benchmarks", show_label=False, scale=2)
     with gr.Row():
-        gr.Image(
-            value="./DGEB_figure.png",
-            format="png",
-            container=True,
-            width="50%",
-            show_download_button=False,
-            show_label=False,
+        # get full path of the image
+
+        gr.HTML(
+            f"<img src='file/{image_path}' alt='DGEB Figure' style='border-radius: 0.8rem;'> "
         )
         gr.Markdown(
             """
@@ -264,4 +261,4 @@ with gr.Blocks() as demo:
                     )
 
 
-demo.launch()
+demo.launch(allowed_paths=["."])
