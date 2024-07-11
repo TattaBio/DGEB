@@ -79,7 +79,9 @@ def task_results_to_dgeb_score(
     model: GEBModel, model_results: List[TaskResults]
 ) -> dict:
     best_scores_per_task = []
+    modalities_seen = set()
     for task_result in model_results:
+        modalities_seen.add(task_result.task.modality)
         assert (
             task_result.model.hf_name == model.hf_name
         ), f"Model names do not match, {task_result.model.hf_name} != {model.hf_name}"
@@ -92,6 +94,10 @@ def task_results_to_dgeb_score(
                     scores.append(metric.value)
         best_score = max(scores)
         best_scores_per_task.append(best_score)
+
+    assert (
+        len(modalities_seen) == 1
+    ), f"Multiple modalities found for model {model.hf_name}"
     # Calculate the average of the best scores for each task.
     assert len(best_scores_per_task) > 0, f"No tasks found for model {model.hf_name}"
     dgeb_score = sum(best_scores_per_task) / len(best_scores_per_task)
@@ -99,6 +105,7 @@ def task_results_to_dgeb_score(
         "Task Name": "DGEB Score",
         "Task Category": "DGEB",
         "Model": model.hf_name,
+        "Modality": list(modalities_seen)[0],
         "Num. Parameters (millions)": format_num_params(model.num_params),
         "Emb. Dimension": model.embed_dim,
         "Score": dgeb_score,
@@ -176,7 +183,7 @@ def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
 df = task_results_to_df(load_results())
 image_path = "./DGEB_Figure.png"
 with gr.Blocks() as demo:
-    gr.Label("Diverse Genomic Embedding Benchmarks", show_label=False, scale=2)
+    gr.Label("Diverse Genomic Embedding Benchmark", show_label=False, scale=2)
     with gr.Row():
         # get full path of the image
 
