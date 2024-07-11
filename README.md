@@ -1,3 +1,9 @@
+---
+title: DGEB
+app_file : leaderboard/app.py
+sdk: docker
+sdk_version: 4.36.1
+---
 <h1 align="center">Diverse Genomic Embedding Benchmark</h1>
 
 <p align="center">
@@ -80,7 +86,7 @@ Custom models should be wrapped with the `dgeb.models.BioSeqTransformer` abstrac
 ```python
 import dgeb
 from dgeb.models import BioSeqTransformer
-from dgeb.modality import Modality
+from dgeb.tasks.tasks import Modality
 
 class MyModel(BioSeqTransformer):
 
@@ -141,7 +147,28 @@ evaluation.run(model)
 
 ## Leaderboard
 
-TODO
+To add your submission to the DGEB leaderboard, proceed through the following instructions.
+
+1. Fork the DGEB repository by following GitHub's instruction [Forking Workflow](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+
+2. Add your submission .json file to the leaderboard/submissions/<HF_MODEL_NAME>/ directory. 
+
+```bash
+mv /path/to/<SUBMISSION_FILE>.json /path/to/DGEB/leaderboard/submissions/<HF_MODEL_NAME>/
+```
+
+4. Update your fork with the new submission:
+
+```bash
+git add leaderboard/submissions/<HF_MODEL_NAME>/<SUBMISSION_FILE>.json
+git commit -m "Add submission for <HF_MODEL_NAME>"
+git push
+```
+
+5. Open a pull request to the main branch of the repository via the Github interface.
+
+6. Once the PR is review and merged, your submission will be added to the leaderboard!
+
 
 ## Acknowledgements
 

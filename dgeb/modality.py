@@ -1,5 +1,3 @@
-"""Defines the data modality enum."""
-
 from enum import Enum
 
 
