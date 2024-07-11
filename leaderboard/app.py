@@ -216,9 +216,7 @@ DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/D
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(
-                        axis=1, how="all"
-                    )  # drop all NaN columns for Overall tab
+                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
                     # round all values to 4 decimal places
                     rounded_df = filtered_df.round(SIG_FIGS)
 
