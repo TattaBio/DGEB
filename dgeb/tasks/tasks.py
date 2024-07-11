@@ -2,7 +2,7 @@
 
 import logging
 from typing import List, Literal, Optional, Any
-from importlib.metadata import version
+from importlib.metadata import version, PackageNotFoundError
 from enum import Enum
 import datasets
 from pydantic import BaseModel, model_validator
@@ -107,8 +107,14 @@ class TaskResult(BaseModel):
         layer_results: LayerResult,
         model_metadata: GEBModel,
     ):
+        version_str = "0.0.0"
+        try:
+            version_str = str(version("dgeb"))
+        except PackageNotFoundError:
+            print(f"Failed to grab dgeb version. falling back to {version_str=}")
+
         return TaskResult(
-            dgeb_version=version("dgeb"),
+            dgeb_version=version_str,
             task=task_metadata,
             model=model_metadata,
             results=list(

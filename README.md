@@ -151,7 +151,45 @@ evaluation.run(model)
 
 ## Leaderboard
 
-TODO
+To add your submission to the DGEB leaderboard, proceed through the following instructions.
+
+1. Clone this repository:
+
+```bash
+git clone git@github.com:TattaBio/DGEB.git
+```
+
+2. Create a new branch:
+
+```bash
+git checkout -b <SUBMISSION_BRANCH>
+git push origin <SUBMISSION_BRANCH>
+```
+
+3. Obtain a submission json file by running the benchmark evaluation using your model:
+
+```bash
+???
+```
+
+3. Add your submission .json file to the leaderboard/submissions/<HF_MODEL_NAME>/ directory. 
+
+```bash
+mv <SUBMISSION_FILE>.json leaderboard/submissions/<HF_MODEL_NAME>/
+```
+
+4. Update your branch with the new submission:
+
+```bash
+git add leaderboard/submissions/<HF_MODEL_NAME>/<SUBMISSION_FILE>.json
+git commit -m "Add submission for <HF_MODEL_NAME>"
+git push
+```
+
+5. Open a pull request to the main branch of the repository via the Github interface.
+
+6. Once the PR is review and merged, your submission will be added to the leaderboard!
+
 
 ## Acknowledgements
 
