@@ -7,8 +7,8 @@ from pydantic import BaseModel
 class Metric(BaseModel):
     id: str
     display_name: str
-    value: float
     description: Optional[str]
+    value: float
 
 
 class LayerResult(BaseModel):
@@ -35,18 +35,11 @@ class Task(BaseModel):
         Literal["clustering"],
         Literal["retrieval"],
     ]
-
     datasets: List[Dataset]
     primary_metric_id: str
 
 
-class GEBModel(BaseModel):
-    hf_name: str
-    num_layers: int
-    num_params: int
-    embed_dim: int
-
-
+# results.py
 class TaskResults(BaseModel):
     dgeb_version: str
     task: Task

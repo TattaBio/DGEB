@@ -3,12 +3,10 @@
 import logging
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Literal, Optional
+from importlib.metadata import version
 
 import datasets
 from pydantic import BaseModel, model_validator
-
-from ..modality import Modality
-from ..models import BioSeqTransformer
 
 logging.basicConfig(level=logging.INFO)
 
@@ -20,6 +18,16 @@ TaskType = Literal[
     "bigene_mining",
     "retrieval",
 ]
+"""Defines the data modality enum."""
+
+from enum import Enum
+
+
+class Modality(Enum):
+    """Data modality, either DNA or protein sequence."""
+
+    PROTEIN = "protein"
+    DNA = "dna"
 
 
 class TaskMetric(BaseModel):
@@ -35,44 +43,11 @@ class LayerResult(BaseModel):
     metrics: List[TaskMetric]
 
 
-class TaskResult(BaseModel):
-    task: "TaskMetadata"
-    # TODO: Convert model to ModelMetadata
-    model: Dict[str, Any]
-    results: List[LayerResult]
-
-    @model_validator(mode="after")
-    def check_valid_primary_metric(self):
-        for result in self.results:
-            if all(
-                metric.id != self.task.primary_metric_id for metric in result.metrics
-            ):
-                raise ValueError(
-                    f"Primary metric {self.task.primary_metric_id} not found in results.metrics"
-                )
-        return self
-
-    @staticmethod
-    def from_dict(
-        task_metadata: "TaskMetadata",
-        layer_results: Dict[str, Any],
-        model_metadata: Dict[str, Any],
-    ):
-        return TaskResult(
-            task=task_metadata,
-            model=model_metadata,
-            results=list(
-                LayerResult(
-                    layer_number=int(layer),
-                    layer_display_name=str(layer),
-                    metrics=[
-                        TaskMetric(id=metric, display_name=metric, value=value)
-                        for metric, value in metrics.items()
-                    ],
-                )
-                for layer, metrics in layer_results["layers"].items()
-            ),
-        )
+class GEBModel(BaseModel):
+    hf_name: str
+    num_layers: int
+    num_params: int
+    embed_dim: int
 
 
 class Dataset(BaseModel):
@@ -100,35 +75,44 @@ class TaskMetadata(BaseModel):
     primary_metric_id: str
 
 
-class Task(ABC):
-    metadata: TaskMetadata
+# tasks.py
+class TaskResult(BaseModel):
+    dgeb_version: str
+    task: "TaskMetadata"
+    # TODO: Convert model to ModelMetadata
+    model: GEBModel
+    results: List[LayerResult]
 
-    @abstractmethod
-    def run(
-        self, model: BioSeqTransformer, layers: Optional[List[int]] = None
-    ) -> TaskResult:
-        pass
+    @model_validator(mode="after")
+    def check_valid_primary_metric(self):
+        for result in self.results:
+            if all(
+                metric.id != self.task.primary_metric_id for metric in result.metrics
+            ):
+                raise ValueError(
+                    f"Primary metric {self.task.primary_metric_id} not found in results.metrics"
+                )
+        return self
 
-
-class noop(Task):
-    metadata = TaskMetadata(
-        id="noop",
-        display_name="NoOp Task",
-        description="This task is used for testing and does nothing.",
-        type="classification",
-        modality=Modality.PROTEIN,
-        datasets=[
-            Dataset(
-                path="",
-                revision="main",
-            )
-        ],
-        primary_metric_id="f1",
-    )
-
-    def run(self, model: BioSeqTransformer) -> TaskResult:
-        return TaskResult.from_dict(
-            self.metadata,
-            {"layers": {32: {"accuracy": 0.5, "f1": 0.5}}},
-            model.metadata,
+    @staticmethod
+    def from_dict(
+        task_metadata: "TaskMetadata",
+        layer_results: Dict[str, Any],
+        model_metadata: GEBModel,
+    ):
+        return TaskResult(
+            dgeb_version=version("dgeb"),
+            task=task_metadata,
+            model=model_metadata,
+            results=list(
+                LayerResult(
+                    layer_number=int(layer),
+                    layer_display_name=str(layer),
+                    metrics=[
+                        TaskMetric(id=metric, display_name=metric, value=value)
+                        for metric, value in metrics.items()
+                    ],
+                )
+                for layer, metrics in layer_results["layers"].items()
+            ),
         )

@@ -10,14 +10,14 @@ from pydantic import ValidationError, parse_obj_as
 SIG_FIGS = 4
 
 # HACK: very hacky way to import from parent directory, while avoiding needing all the deps of the parent package
-results_path = "../dgeb/results.py"
+tasks_path = "../dgeb/tasks/tasks.py"
 
 # Load the module
-spec = importlib.util.spec_from_file_location("results", results_path)
-results = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(results)
-TaskResults = results.TaskResults
-GEBModel = results.GEBModel
+spec = importlib.util.spec_from_file_location("tasks", tasks_path)
+tasks = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(tasks)
+TaskResult = tasks.TaskResult
+GEBModel = tasks.GEBModel
 
 # Assuming the class definitions provided above are complete and imported here
 
@@ -54,9 +54,9 @@ def load_json_files_from_directory(directory_path: Path) -> List[dict]:
     return json_files_content
 
 
-def load_results() -> List[TaskResults]:
+def load_results() -> List[TaskResult]:
     """
-    Recursively load JSON files in ./submissions/** and return a list of TaskResults objects.
+    Recursively load JSON files in ./submissions/** and return a list of TaskResult objects.
     """
     submissions_path = Path("./submissions")
     json_contents = load_json_files_from_directory(submissions_path)
@@ -65,18 +65,18 @@ def load_results() -> List[TaskResults]:
     for content in json_contents:
         try:
             task_result = parse_obj_as(
-                TaskResults, content
-            )  # Using Pydantic's parse_obj_as for creating TaskResults objects
+                TaskResult, content
+            )  # Using Pydantic's parse_obj_as for creating TaskResult objects
             task_results_objects.append(task_result)
         except ValidationError as e:
-            print(f"Error parsing TaskResults object: {e}")
+            print(f"Error parsing TaskResult object: {e}")
             raise e
 
     return task_results_objects
 
 
 def task_results_to_dgeb_score(
-    model: GEBModel, model_results: List[TaskResults]
+    model: GEBModel, model_results: List[TaskResult]
 ) -> dict:
     best_scores_per_task = []
     modalities_seen = set()
@@ -112,7 +112,7 @@ def task_results_to_dgeb_score(
     }
 
 
-def task_results_to_df(model_results: List[TaskResults]) -> pd.DataFrame:
+def task_results_to_df(model_results: List[TaskResult]) -> pd.DataFrame:
     # Initialize an empty list to hold all rows of data
     data_rows = []
     all_models = {}
@@ -216,7 +216,9 @@ DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/D
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
+                    ).dropna(
+                        axis=1, how="all"
+                    )  # drop all NaN columns for Overall tab
                     # round all values to 4 decimal places
                     rounded_df = filtered_df.round(SIG_FIGS)
 
