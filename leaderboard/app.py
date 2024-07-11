@@ -1,10 +1,11 @@
-import math
-import json
-from pathlib import Path
-import gradio as gr
-from typing import List
-import pandas as pd
 import importlib.util
+import json
+import math
+from pathlib import Path
+from typing import List
+
+import gradio as gr
+import pandas as pd
 from pydantic import ValidationError, parse_obj_as
 
 SIG_FIGS = 4
@@ -24,7 +25,7 @@ spec = importlib.util.spec_from_file_location("tasks", tasks_path)
 tasks = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(tasks)
 TaskResult = tasks.TaskResult
-GEBModel = tasks.GEBModel
+DGEBModel = tasks.DGEBModel
 
 
 # Assuming the class definitions provided above are complete and imported here
@@ -84,7 +85,7 @@ def load_results() -> List[TaskResult]:
 
 
 def task_results_to_dgeb_score(
-    model: GEBModel, model_results: List[TaskResult]
+    model: DGEBModel, model_results: List[TaskResult]
 ) -> dict:
     best_scores_per_task = []
     modalities_seen = set()

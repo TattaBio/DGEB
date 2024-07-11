@@ -1,13 +1,13 @@
 """Task abstract class for evaluation and results."""
 
 import logging
-from typing import List, Literal, Optional, Any
-from importlib.metadata import version
+from abc import ABC, abstractmethod
 from enum import Enum
+from importlib.metadata import version
+from typing import Any, List, Literal, Optional
+
 import datasets
 from pydantic import BaseModel, model_validator
-from abc import ABC, abstractmethod
-
 
 # HACK: if Modality is not defined, then import it from modality.py
 try:
@@ -50,7 +50,7 @@ class LayerResult(BaseModel):
     metrics: List[TaskMetric]
 
 
-class GEBModel(BaseModel):
+class DGEBModel(BaseModel):
     hf_name: str
     num_layers: int
     num_params: int
@@ -87,7 +87,7 @@ class TaskResult(BaseModel):
     dgeb_version: str
     task: "TaskMetadata"
     # TODO: Convert model to ModelMetadata
-    model: GEBModel
+    model: DGEBModel
     results: List[LayerResult]
 
     @model_validator(mode="after")
@@ -105,7 +105,7 @@ class TaskResult(BaseModel):
     def from_dict(
         task_metadata: "TaskMetadata",
         layer_results: LayerResult,
-        model_metadata: GEBModel,
+        model_metadata: DGEBModel,
     ):
         return TaskResult(
             dgeb_version=version("dgeb"),
