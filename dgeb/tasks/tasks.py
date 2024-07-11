@@ -1,10 +1,9 @@
 """Task abstract class for evaluation and results."""
 
 import logging
-from abc import ABC, abstractmethod
-from typing import Any, Dict, List, Literal, Optional
+from typing import List, Literal, Optional
 from importlib.metadata import version
-
+from enum import Enum
 import datasets
 from pydantic import BaseModel, model_validator
 
@@ -19,8 +18,6 @@ TaskType = Literal[
     "retrieval",
 ]
 """Defines the data modality enum."""
-
-from enum import Enum
 
 
 class Modality(Enum):
@@ -97,7 +94,7 @@ class TaskResult(BaseModel):
     @staticmethod
     def from_dict(
         task_metadata: "TaskMetadata",
-        layer_results: Dict[str, Any],
+        layer_results: LayerResult,
         model_metadata: GEBModel,
     ):
         return TaskResult(
