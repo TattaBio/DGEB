@@ -2,7 +2,7 @@
 
 import logging
 from typing import List, Literal, Optional, Any
-from importlib.metadata import version, PackageNotFoundError
+from importlib.metadata import version
 from enum import Enum
 import datasets
 from pydantic import BaseModel, model_validator
@@ -12,7 +12,7 @@ from abc import ABC, abstractmethod
 # HACK: if Modality is not defined, then import it from modality.py
 try:
     from ..modality import Modality
-except:
+except Exception:
     # if not, super hack to get the leaderboard working.
     # SHOULD MATCH the code exactly in modality.py
     # can we read the file and run that code?
