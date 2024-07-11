@@ -10,6 +10,13 @@ from pydantic import ValidationError, parse_obj_as
 SIG_FIGS = 4
 
 # HACK: very hacky way to import from parent directory, while avoiding needing all the deps of the parent package
+modality_path = "../dgeb/modality.py"
+spec = importlib.util.spec_from_file_location("modality", modality_path)
+modality = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(modality)
+Modality = modality.Modality
+
+
 tasks_path = "../dgeb/tasks/tasks.py"
 
 # Load the module
@@ -18,6 +25,7 @@ tasks = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(tasks)
 TaskResult = tasks.TaskResult
 GEBModel = tasks.GEBModel
+
 
 # Assuming the class definitions provided above are complete and imported here
 
@@ -216,7 +224,9 @@ DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/D
                             (df["Task Name"] == task)
                             & (df["Task Category"] == category)
                         ].drop(columns=columns_to_hide)
-                    ).dropna(axis=1, how="all")  # drop all NaN columns for Overall tab
+                    ).dropna(
+                        axis=1, how="all"
+                    )  # drop all NaN columns for Overall tab
                     # round all values to 4 decimal places
                     rounded_df = filtered_df.round(SIG_FIGS)
 

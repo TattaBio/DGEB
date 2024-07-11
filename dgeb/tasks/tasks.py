@@ -1,11 +1,29 @@
 """Task abstract class for evaluation and results."""
 
 import logging
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Any
 from importlib.metadata import version
 from enum import Enum
 import datasets
 from pydantic import BaseModel, model_validator
+from abc import ABC, abstractmethod
+
+
+# HACK: if Modality is not defined, then import it from modality.py
+try:
+    from ..modality import Modality
+except:
+    # if not, super hack to get the leaderboard working.
+    # SHOULD MATCH the code exactly in modality.py
+    # can we read the file and run that code?
+    from enum import Enum
+
+    class Modality(Enum):
+        """Data modality, either DNA or protein sequence."""
+
+        PROTEIN = "protein"
+        DNA = "dna"
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -17,14 +35,6 @@ TaskType = Literal[
     "bigene_mining",
     "retrieval",
 ]
-"""Defines the data modality enum."""
-
-
-class Modality(Enum):
-    """Data modality, either DNA or protein sequence."""
-
-    PROTEIN = "protein"
-    DNA = "dna"
 
 
 class TaskMetric(BaseModel):
@@ -113,3 +123,13 @@ class TaskResult(BaseModel):
                 for layer, metrics in layer_results["layers"].items()
             ),
         )
+
+
+# move to model.py?
+class Task(ABC):
+    metadata: TaskMetadata
+
+    # using Any instead of "BioSeqTransformer" to avoid installing all deps in leaderboard
+    @abstractmethod
+    def run(self, model: Any, layers: Optional[List[int]] = None) -> TaskResult:
+        pass

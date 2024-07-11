@@ -90,7 +90,7 @@ Custom models should be wrapped with the `dgeb.models.BioSeqTransformer` abstrac
 ```python
 import dgeb
 from dgeb.models import BioSeqTransformer
-from dgeb.modality import Modality
+from dgeb.tasks.tasks import Modality
 
 class MyModel(BioSeqTransformer):
 
