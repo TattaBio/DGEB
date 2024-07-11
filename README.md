@@ -1,12 +1,8 @@
 ---
 title: DGEB
 app_file : leaderboard/app.py
-emoji: 🐨
-colorFrom: blue
-colorTo: blue
 sdk: docker
 sdk_version: 4.36.1
-pinned: false
 ---
 <h1 align="center">Diverse Genomic Embedding Benchmark</h1>
 
@@ -164,12 +160,6 @@ git clone git@github.com:TattaBio/DGEB.git
 ```bash
 git checkout -b <SUBMISSION_BRANCH>
 git push origin <SUBMISSION_BRANCH>
-```
-
-3. Obtain a submission json file by running the benchmark evaluation using your model:
-
-```bash
-???
 ```
 
 3. Add your submission .json file to the leaderboard/submissions/<HF_MODEL_NAME>/ directory. 
