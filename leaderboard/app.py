@@ -184,17 +184,16 @@ df = task_results_to_df(load_results())
 image_path = "./DGEB_Figure.png"
 with gr.Blocks() as demo:
     gr.Label("Diverse Genomic Embedding Benchmark", show_label=False, scale=2)
-    with gr.Row():
-        # get full path of the image
-
-        gr.HTML(
-            f"<img src='file/{image_path}' alt='DGEB Figure' style='border-radius: 0.8rem;'> "
-        )
-        gr.Markdown(
-            """
-            DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/DGEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> Refer to the [DGEB paper](https://example.com) for details on metrics, tasks, and models.
-            """,
-        )
+    gr.HTML(
+        f"<img src='file/{image_path}' alt='DGEB Figure' style='border-radius: 0.8rem; width: 50%; margin-left: auto; margin-right: auto; margin-top:12px;'>"
+    )
+    gr.HTML(
+        """
+<div style='width: 50%; margin-left: auto; margin-right: auto; padding-bottom: 8px;text-align: center;'>
+DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/DGEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> Refer to the [DGEB paper](https://example.com) for details on metrics, tasks, and models.
+</div>
+"""
+    )
 
     unique_categories = df["Task Category"].unique()
     # sort "DGEB" to the start
