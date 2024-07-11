@@ -149,26 +149,15 @@ evaluation.run(model)
 
 To add your submission to the DGEB leaderboard, proceed through the following instructions.
 
-1. Clone this repository:
+1. Fork the DGEB repository by following GitHub's instruction [Forking Workflow](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+
+2. Add your submission .json file to the leaderboard/submissions/<HF_MODEL_NAME>/ directory. 
 
 ```bash
-git clone git@github.com:TattaBio/DGEB.git
+mv /path/to/<SUBMISSION_FILE>.json /path/to/DGEB/leaderboard/submissions/<HF_MODEL_NAME>/
 ```
 
-2. Create a new branch:
-
-```bash
-git checkout -b <SUBMISSION_BRANCH>
-git push origin <SUBMISSION_BRANCH>
-```
-
-3. Add your submission .json file to the leaderboard/submissions/<HF_MODEL_NAME>/ directory. 
-
-```bash
-mv <SUBMISSION_FILE>.json leaderboard/submissions/<HF_MODEL_NAME>/
-```
-
-4. Update your branch with the new submission:
+4. Update your fork with the new submission:
 
 ```bash
 git add leaderboard/submissions/<HF_MODEL_NAME>/<SUBMISSION_FILE>.json
