@@ -1,0 +1,62 @@
+{
+  "task": {
+    "id": "ec_dna_classification",
+    "display_name": "EC Classification",
+    "description": "Evaluate on Enzyme Commission number classification task using DNA sequences.",
+    "modality": "dna",
+    "type": "classification",
+    "datasets": [
+      {
+        "path": "tattabio/ec_classification_dna",
+        "revision": "cd61c74b4930cf9f1963e6d73ff7f14e2c8e74dd"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "InstaDeepAI/nucleotide-transformer-v2-500m-multi-species",
+    "revision": "...",
+    "num_layers": 29,
+    "num_params": 498345436,
+    "embed_dim": 1024
+  },
+  "dgeb_version": "0.0.0",
+  "results": [
+    {
+      "layer_number": 14,
+      "layer_display_name": "14",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.1328125
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.09492187499999999
+        }
+      ]
+    },
+    {
+      "layer_number": 28,
+      "layer_display_name": "28",
+      "metrics": [
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.109375
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.08854166666666666
+        }
+      ]
+    }
+  ]
+}

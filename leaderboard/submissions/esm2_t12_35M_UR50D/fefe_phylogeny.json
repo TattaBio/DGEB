@@ -1,0 +1,90 @@
+{
+  "task": {
+    "id": "fefe_phylogeny",
+    "display_name": "FeFeHydrogenase Phylogeny",
+    "description": "Evaluate on FeFeHydrogenase phylogeny distance correlation task.",
+    "modality": "protein",
+    "type": "eds",
+    "datasets": [
+      {
+        "path": "tattabio/fefe_phylogeny_sequences",
+        "revision": "bce06d79d9ce58413e7bcbed6943905d1afb8b26"
+      },
+      {
+        "path": "tattabio/fefe_phylogeny_distances",
+        "revision": "d6357cee9b4071a8dcdeef54083006f0d5e94fd2"
+      }
+    ],
+    "primary_metric_id": "top_corr"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t12_35M_UR50D",
+    "revision": "...",
+    "num_layers": 12,
+    "num_params": 33992881,
+    "embed_dim": 480
+  },
+  "dgeb_version": "0.0.0",
+  "results": [
+    {
+      "layer_number": 6,
+      "layer_display_name": "6",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.46213607103563425
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.5621218764061721
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.5442663405841599
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.5621218764061721
+        }
+      ]
+    },
+    {
+      "layer_number": 11,
+      "layer_display_name": "11",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.1524486344353939
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.5194125891005561
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.48868066660269227
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.5194125891005561
+        }
+      ]
+    }
+  ]
+}

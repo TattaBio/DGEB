@@ -1,0 +1,86 @@
+{
+  "task": {
+    "id": "bacarch_bigene",
+    "display_name": "BacArch BiGene",
+    "description": "Evaluate on BacArch bigene matching task between bacterial (E.coli K-12) proteins and archaeal (Sulfolobus acidocaldarius DSM 639) proteins.",
+    "modality": "protein",
+    "type": "bigene_mining",
+    "datasets": [
+      {
+        "path": "tattabio/bac_arch_bigene",
+        "revision": "d5a65e44bae43a9ba9f2fdc03056dff9c12f6631"
+      }
+    ],
+    "primary_metric_id": "f1"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t36_3B_UR50D",
+    "revision": "...",
+    "num_layers": 36,
+    "num_params": 2841627041,
+    "embed_dim": 2560
+  },
+  "dgeb_version": "0.0.0",
+  "results": [
+    {
+      "layer_number": 18,
+      "layer_display_name": "18",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.7773584905660378
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.8415094339622642
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.7973584905660378
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.8415094339622642
+        }
+      ]
+    },
+    {
+      "layer_number": 35,
+      "layer_display_name": "35",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.6844384546271338
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.7547169811320755
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.7023450134770889
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.7547169811320755
+        }
+      ]
+    }
+  ]
+}

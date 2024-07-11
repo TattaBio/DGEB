@@ -1,0 +1,762 @@
+{
+  "task": {
+    "id": "arch_retrieval",
+    "display_name": "Arch Retrieval",
+    "description": "Retrieves bacterial proteins with similar swissprot annotations to a query archaeal protein",
+    "modality": "protein",
+    "type": "retrieval",
+    "datasets": [
+      {
+        "path": "tattabio/arch_retrieval",
+        "revision": "a19124322604a21b26b1b3c13a1bd0b8a63c9f7b"
+      },
+      {
+        "path": "tattabio/arch_retrieval_qrels",
+        "revision": "3f142f2f9a0995d56c6e77188c7251761450afcf"
+      }
+    ],
+    "primary_metric_id": "map_at_5"
+  },
+  "model": {
+    "hf_name": "Rostlab/prot_t5_xl_bfd",
+    "revision": "...",
+    "num_layers": 24,
+    "num_params": 1208141824,
+    "embed_dim": 1024
+  },
+  "dgeb_version": "0.0.0",
+  "results": [
+    {
+      "layer_number": 12,
+      "layer_display_name": "12",
+      "metrics": [
+        {
+          "id": "ndcg_at_5",
+          "display_name": "ndcg_at_5",
+          "description": null,
+          "value": 0.91556
+        },
+        {
+          "id": "ndcg_at_10",
+          "display_name": "ndcg_at_10",
+          "description": null,
+          "value": 0.90692
+        },
+        {
+          "id": "ndcg_at_50",
+          "display_name": "ndcg_at_50",
+          "description": null,
+          "value": 0.87968
+        },
+        {
+          "id": "map_at_5",
+          "display_name": "map_at_5",
+          "description": null,
+          "value": 0.30562
+        },
+        {
+          "id": "map_at_10",
+          "display_name": "map_at_10",
+          "description": null,
+          "value": 0.42599
+        },
+        {
+          "id": "map_at_50",
+          "display_name": "map_at_50",
+          "description": null,
+          "value": 0.71437
+        },
+        {
+          "id": "recall_at_5",
+          "display_name": "recall_at_5",
+          "description": null,
+          "value": 0.31146
+        },
+        {
+          "id": "recall_at_10",
+          "display_name": "recall_at_10",
+          "description": null,
+          "value": 0.43927
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.75802
+        },
+        {
+          "id": "precision_at_5",
+          "display_name": "precision_at_5",
+          "description": null,
+          "value": 0.82868
+        },
+        {
+          "id": "precision_at_10",
+          "display_name": "precision_at_10",
+          "description": null,
+          "value": 0.76219
+        },
+        {
+          "id": "precision_at_50",
+          "display_name": "precision_at_50",
+          "description": null,
+          "value": 0.4731
+        },
+        {
+          "id": "mrr_at_5",
+          "display_name": "mrr_at_5",
+          "description": null,
+          "value": 0.9424384691990327
+        },
+        {
+          "id": "mrr_at_10",
+          "display_name": "mrr_at_10",
+          "description": null,
+          "value": 0.9442957407746143
+        },
+        {
+          "id": "mrr_at_50",
+          "display_name": "mrr_at_50",
+          "description": null,
+          "value": 0.9450892859974356
+        },
+        {
+          "id": "nauc_ndcg_at_5_max",
+          "display_name": "nauc_ndcg_at_5_max",
+          "description": null,
+          "value": 0.6758404864845804
+        },
+        {
+          "id": "nauc_ndcg_at_5_std",
+          "display_name": "nauc_ndcg_at_5_std",
+          "description": null,
+          "value": 0.07802141173529904
+        },
+        {
+          "id": "nauc_ndcg_at_5_diff1",
+          "display_name": "nauc_ndcg_at_5_diff1",
+          "description": null,
+          "value": -0.34014079454644375
+        },
+        {
+          "id": "nauc_ndcg_at_10_max",
+          "display_name": "nauc_ndcg_at_10_max",
+          "description": null,
+          "value": 0.6559176060420032
+        },
+        {
+          "id": "nauc_ndcg_at_10_std",
+          "display_name": "nauc_ndcg_at_10_std",
+          "description": null,
+          "value": 0.11191286028806371
+        },
+        {
+          "id": "nauc_ndcg_at_10_diff1",
+          "display_name": "nauc_ndcg_at_10_diff1",
+          "description": null,
+          "value": -0.36216008877717815
+        },
+        {
+          "id": "nauc_ndcg_at_50_max",
+          "display_name": "nauc_ndcg_at_50_max",
+          "description": null,
+          "value": 0.588166705701525
+        },
+        {
+          "id": "nauc_ndcg_at_50_std",
+          "display_name": "nauc_ndcg_at_50_std",
+          "description": null,
+          "value": -0.00013877612539943873
+        },
+        {
+          "id": "nauc_ndcg_at_50_diff1",
+          "display_name": "nauc_ndcg_at_50_diff1",
+          "description": null,
+          "value": -0.26109772787783125
+        },
+        {
+          "id": "nauc_map_at_5_max",
+          "display_name": "nauc_map_at_5_max",
+          "description": null,
+          "value": -0.014830905831570812
+        },
+        {
+          "id": "nauc_map_at_5_std",
+          "display_name": "nauc_map_at_5_std",
+          "description": null,
+          "value": 0.10595506924709744
+        },
+        {
+          "id": "nauc_map_at_5_diff1",
+          "display_name": "nauc_map_at_5_diff1",
+          "description": null,
+          "value": 0.32085091803527405
+        },
+        {
+          "id": "nauc_map_at_10_max",
+          "display_name": "nauc_map_at_10_max",
+          "description": null,
+          "value": 0.10033887584469645
+        },
+        {
+          "id": "nauc_map_at_10_std",
+          "display_name": "nauc_map_at_10_std",
+          "description": null,
+          "value": 0.2053648224876042
+        },
+        {
+          "id": "nauc_map_at_10_diff1",
+          "display_name": "nauc_map_at_10_diff1",
+          "description": null,
+          "value": 0.20098155837221496
+        },
+        {
+          "id": "nauc_map_at_50_max",
+          "display_name": "nauc_map_at_50_max",
+          "description": null,
+          "value": 0.5383618167014114
+        },
+        {
+          "id": "nauc_map_at_50_std",
+          "display_name": "nauc_map_at_50_std",
+          "description": null,
+          "value": 0.18560538825485104
+        },
+        {
+          "id": "nauc_map_at_50_diff1",
+          "display_name": "nauc_map_at_50_diff1",
+          "description": null,
+          "value": -0.14646774451947722
+        },
+        {
+          "id": "nauc_recall_at_5_max",
+          "display_name": "nauc_recall_at_5_max",
+          "description": null,
+          "value": -0.02008919630315214
+        },
+        {
+          "id": "nauc_recall_at_5_std",
+          "display_name": "nauc_recall_at_5_std",
+          "description": null,
+          "value": 0.11234151602554744
+        },
+        {
+          "id": "nauc_recall_at_5_diff1",
+          "display_name": "nauc_recall_at_5_diff1",
+          "description": null,
+          "value": 0.3242694849254786
+        },
+        {
+          "id": "nauc_recall_at_10_max",
+          "display_name": "nauc_recall_at_10_max",
+          "description": null,
+          "value": 0.0837787484872365
+        },
+        {
+          "id": "nauc_recall_at_10_std",
+          "display_name": "nauc_recall_at_10_std",
+          "description": null,
+          "value": 0.22103746678628963
+        },
+        {
+          "id": "nauc_recall_at_10_diff1",
+          "display_name": "nauc_recall_at_10_diff1",
+          "description": null,
+          "value": 0.21375392931643278
+        },
+        {
+          "id": "nauc_recall_at_50_max",
+          "display_name": "nauc_recall_at_50_max",
+          "description": null,
+          "value": 0.5147756801091333
+        },
+        {
+          "id": "nauc_recall_at_50_std",
+          "display_name": "nauc_recall_at_50_std",
+          "description": null,
+          "value": 0.22064295388157423
+        },
+        {
+          "id": "nauc_recall_at_50_diff1",
+          "display_name": "nauc_recall_at_50_diff1",
+          "description": null,
+          "value": -0.11436202458939185
+        },
+        {
+          "id": "nauc_precision_at_5_max",
+          "display_name": "nauc_precision_at_5_max",
+          "description": null,
+          "value": 0.5561758833104028
+        },
+        {
+          "id": "nauc_precision_at_5_std",
+          "display_name": "nauc_precision_at_5_std",
+          "description": null,
+          "value": 0.09041415273912264
+        },
+        {
+          "id": "nauc_precision_at_5_diff1",
+          "display_name": "nauc_precision_at_5_diff1",
+          "description": null,
+          "value": -0.7212291337345235
+        },
+        {
+          "id": "nauc_precision_at_10_max",
+          "display_name": "nauc_precision_at_10_max",
+          "description": null,
+          "value": 0.46267035130101786
+        },
+        {
+          "id": "nauc_precision_at_10_std",
+          "display_name": "nauc_precision_at_10_std",
+          "description": null,
+          "value": 0.06806184226878606
+        },
+        {
+          "id": "nauc_precision_at_10_diff1",
+          "display_name": "nauc_precision_at_10_diff1",
+          "description": null,
+          "value": -0.6634938646543213
+        },
+        {
+          "id": "nauc_precision_at_50_max",
+          "display_name": "nauc_precision_at_50_max",
+          "description": null,
+          "value": 0.18101555042086578
+        },
+        {
+          "id": "nauc_precision_at_50_std",
+          "display_name": "nauc_precision_at_50_std",
+          "description": null,
+          "value": -0.32278953058129545
+        },
+        {
+          "id": "nauc_precision_at_50_diff1",
+          "display_name": "nauc_precision_at_50_diff1",
+          "description": null,
+          "value": -0.35250619598434496
+        },
+        {
+          "id": "nauc_mrr_at_5_max",
+          "display_name": "nauc_mrr_at_5_max",
+          "description": null,
+          "value": 0.6997884970620865
+        },
+        {
+          "id": "nauc_mrr_at_5_std",
+          "display_name": "nauc_mrr_at_5_std",
+          "description": null,
+          "value": 0.04506108475253997
+        },
+        {
+          "id": "nauc_mrr_at_5_diff1",
+          "display_name": "nauc_mrr_at_5_diff1",
+          "description": null,
+          "value": -0.150746697861468
+        },
+        {
+          "id": "nauc_mrr_at_10_max",
+          "display_name": "nauc_mrr_at_10_max",
+          "description": null,
+          "value": 0.6974394278188117
+        },
+        {
+          "id": "nauc_mrr_at_10_std",
+          "display_name": "nauc_mrr_at_10_std",
+          "description": null,
+          "value": 0.050149955898670835
+        },
+        {
+          "id": "nauc_mrr_at_10_diff1",
+          "display_name": "nauc_mrr_at_10_diff1",
+          "description": null,
+          "value": -0.14664534711931623
+        },
+        {
+          "id": "nauc_mrr_at_50_max",
+          "display_name": "nauc_mrr_at_50_max",
+          "description": null,
+          "value": 0.6968457854626777
+        },
+        {
+          "id": "nauc_mrr_at_50_std",
+          "display_name": "nauc_mrr_at_50_std",
+          "description": null,
+          "value": 0.049163188110125974
+        },
+        {
+          "id": "nauc_mrr_at_50_diff1",
+          "display_name": "nauc_mrr_at_50_diff1",
+          "description": null,
+          "value": -0.14643427219711108
+        }
+      ]
+    },
+    {
+      "layer_number": 23,
+      "layer_display_name": "23",
+      "metrics": [
+        {
+          "id": "ndcg_at_5",
+          "display_name": "ndcg_at_5",
+          "description": null,
+          "value": 0.76922
+        },
+        {
+          "id": "ndcg_at_10",
+          "display_name": "ndcg_at_10",
+          "description": null,
+          "value": 0.73124
+        },
+        {
+          "id": "ndcg_at_50",
+          "display_name": "ndcg_at_50",
+          "description": null,
+          "value": 0.65851
+        },
+        {
+          "id": "map_at_5",
+          "display_name": "map_at_5",
+          "description": null,
+          "value": 0.22822
+        },
+        {
+          "id": "map_at_10",
+          "display_name": "map_at_10",
+          "description": null,
+          "value": 0.30193
+        },
+        {
+          "id": "map_at_50",
+          "display_name": "map_at_50",
+          "description": null,
+          "value": 0.46351
+        },
+        {
+          "id": "recall_at_5",
+          "display_name": "recall_at_5",
+          "description": null,
+          "value": 0.24018
+        },
+        {
+          "id": "recall_at_10",
+          "display_name": "recall_at_10",
+          "description": null,
+          "value": 0.32508
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.54975
+        },
+        {
+          "id": "precision_at_5",
+          "display_name": "precision_at_5",
+          "description": null,
+          "value": 0.69415
+        },
+        {
+          "id": "precision_at_10",
+          "display_name": "precision_at_10",
+          "description": null,
+          "value": 0.60568
+        },
+        {
+          "id": "precision_at_50",
+          "display_name": "precision_at_50",
+          "description": null,
+          "value": 0.33925
+        },
+        {
+          "id": "mrr_at_5",
+          "display_name": "mrr_at_5",
+          "description": null,
+          "value": 0.8569426660975955
+        },
+        {
+          "id": "mrr_at_10",
+          "display_name": "mrr_at_10",
+          "description": null,
+          "value": 0.8589987737875058
+        },
+        {
+          "id": "mrr_at_50",
+          "display_name": "mrr_at_50",
+          "description": null,
+          "value": 0.860342096901009
+        },
+        {
+          "id": "nauc_ndcg_at_5_max",
+          "display_name": "nauc_ndcg_at_5_max",
+          "description": null,
+          "value": 0.6229293301375335
+        },
+        {
+          "id": "nauc_ndcg_at_5_std",
+          "display_name": "nauc_ndcg_at_5_std",
+          "description": null,
+          "value": 0.4128916234696497
+        },
+        {
+          "id": "nauc_ndcg_at_5_diff1",
+          "display_name": "nauc_ndcg_at_5_diff1",
+          "description": null,
+          "value": -0.12491964721295902
+        },
+        {
+          "id": "nauc_ndcg_at_10_max",
+          "display_name": "nauc_ndcg_at_10_max",
+          "description": null,
+          "value": 0.5725634494942511
+        },
+        {
+          "id": "nauc_ndcg_at_10_std",
+          "display_name": "nauc_ndcg_at_10_std",
+          "description": null,
+          "value": 0.40575051204835366
+        },
+        {
+          "id": "nauc_ndcg_at_10_diff1",
+          "display_name": "nauc_ndcg_at_10_diff1",
+          "description": null,
+          "value": -0.15984334362764854
+        },
+        {
+          "id": "nauc_ndcg_at_50_max",
+          "display_name": "nauc_ndcg_at_50_max",
+          "description": null,
+          "value": 0.4671079862629836
+        },
+        {
+          "id": "nauc_ndcg_at_50_std",
+          "display_name": "nauc_ndcg_at_50_std",
+          "description": null,
+          "value": 0.37026058182180693
+        },
+        {
+          "id": "nauc_ndcg_at_50_diff1",
+          "display_name": "nauc_ndcg_at_50_diff1",
+          "description": null,
+          "value": -0.10868446365529066
+        },
+        {
+          "id": "nauc_map_at_5_max",
+          "display_name": "nauc_map_at_5_max",
+          "description": null,
+          "value": 0.14085023375284314
+        },
+        {
+          "id": "nauc_map_at_5_std",
+          "display_name": "nauc_map_at_5_std",
+          "description": null,
+          "value": 0.22636481411436557
+        },
+        {
+          "id": "nauc_map_at_5_diff1",
+          "display_name": "nauc_map_at_5_diff1",
+          "description": null,
+          "value": 0.20416003342491348
+        },
+        {
+          "id": "nauc_map_at_10_max",
+          "display_name": "nauc_map_at_10_max",
+          "description": null,
+          "value": 0.23722391725543646
+        },
+        {
+          "id": "nauc_map_at_10_std",
+          "display_name": "nauc_map_at_10_std",
+          "description": null,
+          "value": 0.3063646829510937
+        },
+        {
+          "id": "nauc_map_at_10_diff1",
+          "display_name": "nauc_map_at_10_diff1",
+          "description": null,
+          "value": 0.11281577118835237
+        },
+        {
+          "id": "nauc_map_at_50_max",
+          "display_name": "nauc_map_at_50_max",
+          "description": null,
+          "value": 0.46696020043403985
+        },
+        {
+          "id": "nauc_map_at_50_std",
+          "display_name": "nauc_map_at_50_std",
+          "description": null,
+          "value": 0.42152653625289493
+        },
+        {
+          "id": "nauc_map_at_50_diff1",
+          "display_name": "nauc_map_at_50_diff1",
+          "description": null,
+          "value": -0.08111993114861822
+        },
+        {
+          "id": "nauc_recall_at_5_max",
+          "display_name": "nauc_recall_at_5_max",
+          "description": null,
+          "value": 0.12046877670841287
+        },
+        {
+          "id": "nauc_recall_at_5_std",
+          "display_name": "nauc_recall_at_5_std",
+          "description": null,
+          "value": 0.21017995546377888
+        },
+        {
+          "id": "nauc_recall_at_5_diff1",
+          "display_name": "nauc_recall_at_5_diff1",
+          "description": null,
+          "value": 0.19460706495216118
+        },
+        {
+          "id": "nauc_recall_at_10_max",
+          "display_name": "nauc_recall_at_10_max",
+          "description": null,
+          "value": 0.20295180744150895
+        },
+        {
+          "id": "nauc_recall_at_10_std",
+          "display_name": "nauc_recall_at_10_std",
+          "description": null,
+          "value": 0.28352319675208193
+        },
+        {
+          "id": "nauc_recall_at_10_diff1",
+          "display_name": "nauc_recall_at_10_diff1",
+          "description": null,
+          "value": 0.10984164101180431
+        },
+        {
+          "id": "nauc_recall_at_50_max",
+          "display_name": "nauc_recall_at_50_max",
+          "description": null,
+          "value": 0.4349341161444355
+        },
+        {
+          "id": "nauc_recall_at_50_std",
+          "display_name": "nauc_recall_at_50_std",
+          "description": null,
+          "value": 0.3879826102213279
+        },
+        {
+          "id": "nauc_recall_at_50_diff1",
+          "display_name": "nauc_recall_at_50_diff1",
+          "description": null,
+          "value": -0.07896065211344214
+        },
+        {
+          "id": "nauc_precision_at_5_max",
+          "display_name": "nauc_precision_at_5_max",
+          "description": null,
+          "value": 0.5328788932256486
+        },
+        {
+          "id": "nauc_precision_at_5_std",
+          "display_name": "nauc_precision_at_5_std",
+          "description": null,
+          "value": 0.32074885397774344
+        },
+        {
+          "id": "nauc_precision_at_5_diff1",
+          "display_name": "nauc_precision_at_5_diff1",
+          "description": null,
+          "value": -0.31911971640195713
+        },
+        {
+          "id": "nauc_precision_at_10_max",
+          "display_name": "nauc_precision_at_10_max",
+          "description": null,
+          "value": 0.45500288678534834
+        },
+        {
+          "id": "nauc_precision_at_10_std",
+          "display_name": "nauc_precision_at_10_std",
+          "description": null,
+          "value": 0.2681194584757835
+        },
+        {
+          "id": "nauc_precision_at_10_diff1",
+          "display_name": "nauc_precision_at_10_diff1",
+          "description": null,
+          "value": -0.34939580835864753
+        },
+        {
+          "id": "nauc_precision_at_50_max",
+          "display_name": "nauc_precision_at_50_max",
+          "description": null,
+          "value": 0.23627988535364855
+        },
+        {
+          "id": "nauc_precision_at_50_std",
+          "display_name": "nauc_precision_at_50_std",
+          "description": null,
+          "value": 0.043589016181725906
+        },
+        {
+          "id": "nauc_precision_at_50_diff1",
+          "display_name": "nauc_precision_at_50_diff1",
+          "description": null,
+          "value": -0.26692480361724236
+        },
+        {
+          "id": "nauc_mrr_at_5_max",
+          "display_name": "nauc_mrr_at_5_max",
+          "description": null,
+          "value": 0.7415289598377633
+        },
+        {
+          "id": "nauc_mrr_at_5_std",
+          "display_name": "nauc_mrr_at_5_std",
+          "description": null,
+          "value": 0.43021039474005807
+        },
+        {
+          "id": "nauc_mrr_at_5_diff1",
+          "display_name": "nauc_mrr_at_5_diff1",
+          "description": null,
+          "value": 0.11071333809933313
+        },
+        {
+          "id": "nauc_mrr_at_10_max",
+          "display_name": "nauc_mrr_at_10_max",
+          "description": null,
+          "value": 0.7421025217893243
+        },
+        {
+          "id": "nauc_mrr_at_10_std",
+          "display_name": "nauc_mrr_at_10_std",
+          "description": null,
+          "value": 0.434990212167193
+        },
+        {
+          "id": "nauc_mrr_at_10_diff1",
+          "display_name": "nauc_mrr_at_10_diff1",
+          "description": null,
+          "value": 0.1124635999964573
+        },
+        {
+          "id": "nauc_mrr_at_50_max",
+          "display_name": "nauc_mrr_at_50_max",
+          "description": null,
+          "value": 0.742616888935384
+        },
+        {
+          "id": "nauc_mrr_at_50_std",
+          "display_name": "nauc_mrr_at_50_std",
+          "description": null,
+          "value": 0.4371335788300678
+        },
+        {
+          "id": "nauc_mrr_at_50_diff1",
+          "display_name": "nauc_mrr_at_50_diff1",
+          "description": null,
+          "value": 0.11342495339203741
+        }
+      ]
+    }
+  ]
+}

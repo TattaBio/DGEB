@@ -1,0 +1,97 @@
+{
+  "task": {
+    "id": "modac_paralogy_bigene",
+    "display_name": "ModAC Paralogy BiGene",
+    "description": "Evaluate on paralogy bitext matching task between paralogous protein (ModA and ModC).",
+    "modality": "protein",
+    "type": "bigene_mining",
+    "datasets": [
+      {
+        "path": "tattabio/modac_paralogy_bigene",
+        "revision": "241ca6397856e3360da04422d54933035b1fab87"
+      }
+    ],
+    "primary_metric_id": "recall_at_50"
+  },
+  "model": {
+    "hf_name": "Rostlab/prot_t5_xl_uniref50",
+    "num_layers": 24,
+    "num_params": 1208141824,
+    "embed_dim": 1024
+  },
+  "dgeb_version": "0.0.0",
+  "results": [
+    {
+      "layer_number": 12,
+      "layer_display_name": "12",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 4.4952467261118094e-7
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 8.984467652322665e-7
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.0006702412868632708
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.07238605898123325
+        }
+      ]
+    },
+    {
+      "layer_number": 23,
+      "layer_display_name": "23",
+      "metrics": [
+        {
+          "id": "precision",
+          "display_name": "precision",
+          "description": null,
+          "value": 0.00138083916941656
+        },
+        {
+          "id": "recall",
+          "display_name": "recall",
+          "description": null,
+          "value": 0.004021447721179625
+        },
+        {
+          "id": "f1",
+          "display_name": "f1",
+          "description": null,
+          "value": 0.0017770613376799141
+        },
+        {
+          "id": "accuracy",
+          "display_name": "accuracy",
+          "description": null,
+          "value": 0.004021447721179625
+        },
+        {
+          "id": "recall_at_50",
+          "display_name": "recall_at_50",
+          "description": null,
+          "value": 0.2754691689008043
+        }
+      ]
+    }
+  ]
+}

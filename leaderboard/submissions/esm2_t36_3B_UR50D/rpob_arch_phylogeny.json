@@ -1,0 +1,90 @@
+{
+  "task": {
+    "id": "rpob_arch_phylogeny",
+    "display_name": "RpoB Archaeal Phylogeny",
+    "description": "Evaluate on RpoB phylogeny distance correlation task for Archaeal sequences.",
+    "modality": "protein",
+    "type": "eds",
+    "datasets": [
+      {
+        "path": "tattabio/rpob_arch_phylogeny_sequences",
+        "revision": "10de75b9f5ad12340d629fd1ad015ef4319d6ee4"
+      },
+      {
+        "path": "tattabio/rpob_arch_phylogeny_distances",
+        "revision": "2a585f0e135fe74b8ae6d31e7801c6031b0dcc18"
+      }
+    ],
+    "primary_metric_id": "top_corr"
+  },
+  "model": {
+    "hf_name": "facebook/esm2_t36_3B_UR50D",
+    "revision": "...",
+    "num_layers": 36,
+    "num_params": 2841627041,
+    "embed_dim": 2560
+  },
+  "dgeb_version": "0.0.0",
+  "results": [
+    {
+      "layer_number": 18,
+      "layer_display_name": "18",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.106058717692602
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.1528085277532408
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.1702712021061018
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.1702712021061018
+        }
+      ]
+    },
+    {
+      "layer_number": 35,
+      "layer_display_name": "35",
+      "metrics": [
+        {
+          "id": "cos_sim",
+          "display_name": "cos_sim",
+          "description": null,
+          "value": 0.22892873976632383
+        },
+        {
+          "id": "manhattan",
+          "display_name": "manhattan",
+          "description": null,
+          "value": 0.2920991527135924
+        },
+        {
+          "id": "euclidean",
+          "display_name": "euclidean",
+          "description": null,
+          "value": 0.293053056643355
+        },
+        {
+          "id": "top_corr",
+          "display_name": "top_corr",
+          "description": null,
+          "value": 0.293053056643355
+        }
+      ]
+    }
+  ]
+}
