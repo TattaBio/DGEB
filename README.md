@@ -176,6 +176,6 @@ DGEB follows the design of text embedding bechmark [MTEB](https://github.com/emb
 
 ## Citing
 
-DGEB was introduced in "[Diverse Genomic Embedding Benchmark for Functional Evaluation Across the Tree of Life]()", feel free to cite:
+DGEB was introduced in "[Diverse Genomic Embedding Benchmark for Functional Evaluation Across the Tree of Life](https://www.tatta.bio/dgeb)", feel free to cite:
 
 TODO
