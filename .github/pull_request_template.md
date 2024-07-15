@@ -1,8 +1,6 @@
 ## PR Checklist
 Please check if your PR fulfills the following requirements:
 
-- [ ] The commit message follows our guidelines: https://python-semantic-release.readthedocs.io/en/latest/commit-parsing.html#commit-parsing
-- [ ] Tests for the changes have been added (for bug fixes / features)
 - [ ] Docs have been added / updated (for bug fixes / features)
 
 
