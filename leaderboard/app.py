@@ -199,7 +199,7 @@ with gr.Blocks() as demo:
     gr.HTML(
         """
 <div style='width: 50%; margin-left: auto; margin-right: auto; padding-bottom: 8px;text-align: center;'>
-DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/DGEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> Refer to the <a href="https://www.tatta.bio/dgeb" target="_blank" style="text-decoration: underline">DGEB paper</a> for details on metrics, tasks, and models.
+DGEB Leaderboard. To submit, refer to the <a href="https://github.com/TattaBio/DGEB/blob/leaderboard/README.md" target="_blank" style="text-decoration: underline">DGEB GitHub repository</a> Refer to the <a href="https://www.biorxiv.org/content/10.1101/2024.07.10.602933v1" target="_blank" style="text-decoration: underline">DGEB paper</a> for details on metrics, tasks, and models.
 </div>
 """
     )

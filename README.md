@@ -10,8 +10,8 @@ sdk_version: 4.36.1
     <a href="https://github.com/tattabio/dgeb/releases">
         <img alt="GitHub release" src="https://img.shields.io/github/v/release/tattabio/dgeb.svg">
     </a>
-    <a href="">
-        <img alt="arXiv URL" src="">
+    <a href="https://www.biorxiv.org/content/10.1101/2024.07.10.602933v1">
+        <img alt="bioRxiv URL" src="https://img.shields.io/badge/bioRxiv-602933v1-b31b1b.svg">
     </a>
     <a href="https://github.com/tattabio/dgeb/blob/main/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/tattabio/dgeb.svg">
@@ -176,6 +176,16 @@ DGEB follows the design of text embedding bechmark [MTEB](https://github.com/emb
 
 ## Citing
 
-DGEB was introduced in "[Diverse Genomic Embedding Benchmark for Functional Evaluation Across the Tree of Life](https://www.tatta.bio/dgeb)", feel free to cite:
+DGEB was introduced in "[Diverse Genomic Embedding Benchmark for Functional Evaluation Across the Tree of Life](https://www.biorxiv.org/content/10.1101/2024.07.10.602933v1)", feel free to cite:
 
-TODO
+```
+@article{WestRoberts2024,
+  title = {Diverse Genomic Embedding Benchmark for functional evaluation across the tree of life},
+  url = {http://dx.doi.org/10.1101/2024.07.10.602933},
+  DOI = {10.1101/2024.07.10.602933},
+  publisher = {Cold Spring Harbor Laboratory},
+  author = {West-Roberts,  Jacob and Kravitz,  Joshua and Jha,  Nishant and Cornman,  Andre and Hwang,  Yunha},
+  year = {2024},
+  month = jul 
+}
+```
