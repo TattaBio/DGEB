@@ -2,14 +2,14 @@ import logging
 import os
 import traceback
 from itertools import chain
-from typing import Any, List
+from typing import Any, List, Optional
 
 from rich.console import Console
 
 from .eval_utils import set_all_seeds
 from .modality import Modality
 from .models import BioSeqTransformer
-from .tasks.tasks import Task
+from .tasks.tasks import Task, TaskResult
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -36,8 +36,8 @@ class DGEB:
     def run(
         self,
         model,  # type encoder
-        output_folder: str = "results",
-    ):
+        output_folder: Optional[str] = "results",
+    ) -> List[TaskResult]:
         """Run the evaluation pipeline on the selected tasks.
 
         Args:
@@ -66,10 +66,10 @@ class DGEB:
                 continue
 
             results.append(result)
-
-            save_path = get_output_folder(model.hf_name, task, output_folder)
-            with open(save_path, "w") as f_out:
-                f_out.write(result.model_dump_json(indent=2))
+            if output_folder:
+                save_path = get_output_folder(model.hf_name, task, output_folder)
+                with open(save_path, "w") as f_out:
+                    f_out.write(result.model_dump_json(indent=2))
         return results
 
 
