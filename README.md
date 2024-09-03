@@ -76,7 +76,9 @@ import dgeb
 model = dgeb.get_model("facebook/esm2_t6_8M_UR50D")
 tasks = dgeb.get_tasks_by_modality(dgeb.Modality.PROTEIN)
 evaluation = dgeb.DGEB(tasks=tasks)
-evaluation.run(model, output_folder="results")
+# Writes results to `output_folder`, and returns a list of TaskResult.
+# You can disable writing to json by setting `output_folder=None`.
+results = evaluation.run(model, output_folder="results")
 ```
 
 ### Using a custom model
