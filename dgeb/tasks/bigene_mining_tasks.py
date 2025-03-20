@@ -43,7 +43,7 @@ class BacArchBiGeneMining(Task):
         datasets=[
             Dataset(
                 path="tattabio/bac_arch_bigene",
-                revision="d5a65e44bae43a9ba9f2fdc03056dff9c12f6631",
+                revision="1364f230d5e8720a5c2dff1877be5de866ebc503",
             )
         ],
         primary_metric_id="f1",
